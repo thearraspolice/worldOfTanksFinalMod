@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\public",
+    "\\server",
+    "\\server\\modules",
+    "\\server\\modules\\gamemodes",
+    "\\server\\modules\\live",
+    "\\server\\modules\\physics",
+    "\\server\\modules\\setup",
+    "\\server\\modules\\setup\\gamemodeconfigs",
+    "\\server\\modules\\setup\\tiles"
+  ],
+  "SelectedNode": "\\server\\modules\\setup\\tiles\\misc.js",
+  "PreviewInSolutionExplorer": false
+}
