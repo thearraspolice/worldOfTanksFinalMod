@@ -997,6 +997,8 @@ function flatten(data) {
             /* 15 */ data.drawFill,
             /* 16 */ data.invuln,
             /* 17 */ Math.ceil(65535 * data.health),
+            /* 18 */ data.healthN,
+            /* 19 */ data.maxHealthN,
             /* 18 */ Math.round(65535 * data.shield),
             /* 19 */ Math.round(255 * data.alpha),
         );
