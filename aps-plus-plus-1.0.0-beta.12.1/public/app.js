@@ -902,19 +902,19 @@ function drawHealth(x, y, instance, ratio, alpha) {
                 ctx.globalAlpha = 1;
             }
 
-            drawText(Math.round(instance.healthN) + "/" + Math.round(instance.maxHealthN), x, yy + barWidth * 2 + barWidth * settings.graphical.seperatedHealthbars * 2 + 10, 20 * ratio, color.guiwhite, "center");
+            //hp amount/max
+            drawText(Math.round(instance.healthN) + "/" + Math.round(instance.maxHealthN), x, yy + barWidth * 2 + barWidth * settings.graphical.seperatedHealthbars * 2 + 10, 12 * ratio, color.guiwhite, "center");
         }
     }
     if (instance.id !== gui.playerid && instance.nameplate) {
         var name = instance.name.substring(7, instance.name.length + 1);
         var namecolor = instance.name.substring(0, 7);
         ctx.globalAlpha = alpha;
-        drawText(name, x, y - realSize - 22 * ratio, 12 * ratio, namecolor, "center");
-        drawText(util.handleLargeNumber(instance.score, 1), x, y - realSize - 12 * ratio, 6 * ratio, namecolor, "center");
+        drawText(name, x, y - realSize - 22 * ratio, 12 * ratio, namecolor == "#ffffff" ? color.guiwhite : namecolor, "center");
+        drawText(util.handleLargeNumber(instance.score, 1), x, y - realSize - 12 * ratio, 6 * ratio, namecolor == "#ffffff" ? color.guiwhite : namecolor, "center");
         ctx.globalAlpha = 1;
     }
 }
-
 const iconColorOrder = [10, 11, 12, 15, 13, 2, 14, 4, 5, 1, 0, 3];
 function getIconColor(colorIndex) {
     return iconColorOrder[colorIndex % 12].toString();
