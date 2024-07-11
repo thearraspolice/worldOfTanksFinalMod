@@ -263,7 +263,7 @@ const gameloop = () => {
     }
 };
 
-setTimeout(closeArena, 60000 * 1000); // Restart every 16.6 hours
+setTimeout(closeArena, 60000 * 1); // Restart every minute
 
 global.naturallySpawnedBosses = [];
 global.bots = [];
