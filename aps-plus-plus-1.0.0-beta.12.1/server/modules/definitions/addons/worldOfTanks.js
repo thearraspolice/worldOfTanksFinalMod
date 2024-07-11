@@ -657,10 +657,134 @@ Class.d1 = {
 }
 
 
+Class.tankChassispz35t = {
+    PARENT: 'genericTank',
+    CONTROLLERS: ["turretWithMotion"],
+    SHAPE: 'pz35tchassis.png',
+    SIZE: 20,
+    GUNS: [
+        {
+            POSITION: [0.1, 0.1, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
+                TYPE: "bullet",
+            }
+        }
+    ]
+   
+
+}
+
+
+
+
+
+
+
+
+Class.pz35t = {
+    PARENT: "genericWorldOfTanks",
+    DANGER: 6,
+	BODY: {
+        ACCELERATION: 3,
+        SPEED: 20,
+        HEALTH: 420,
+        
+        SHIELD: 0,
+        REGEN: 0,
+        FOV: 0.6,
+    },
+    LABEL: "Pz. 35-T",
+    SHAPE: 'pz35tturret.png',
+    SIZE: 70,
+    GUNS: [
+        
+        {
+            POSITION: [1, 1, 1, 5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 2.75, damage: 2.75, shudder: 0.5, speed: 2 }, g.power]),
+                TYPE: "developerBullet",
+                ALPHA: 0,
+            }
+        },
+        
+    ],
+    TURRETS: [
+        {
+            POSITION: [20,0, 0, 0, 360, 0],
+            TYPE: ["tankChassispz35t"],
+        },
+    ]
+}
+
+
+
+
+
+
+Class.tankChassisd2 = {
+    PARENT: 'genericTank',
+    CONTROLLERS: ["turretWithMotion"],
+    SHAPE: 'd2chassis.png',
+    SIZE: 20,
+    GUNS: [
+        {
+            POSITION: [0.1, 0.1, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
+                TYPE: "bullet",
+            }
+        }
+    ]
+   
+
+}
+
+
+
+
+Class.d2 = {
+    PARENT: "genericWorldOfTanks",
+    DANGER: 6,
+	BODY: {
+        ACCELERATION: 3,
+        SPEED: 15,
+        HEALTH: 510,
+        
+        SHIELD: 0,
+        REGEN: 0,
+        FOV: 0.6,
+    },
+    LABEL: "D2",
+    SHAPE: 'd2turret.png',
+    SIZE: 70,
+    GUNS: [
+        
+        {
+            POSITION: [1, 1, 1, 5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 2, damage: 3, shudder: 0.5, speed: 2 }, g.power]),
+                TYPE: "developerBullet",
+                ALPHA: 0,
+            }
+        },
+        
+    ],
+    TURRETS: [
+        {
+            POSITION: [20,0, 0, 0, 360, 0],
+            TYPE: ["tankChassisd2"],
+        },
+    ]
+}
+
+
+
 
 
 
 Class.tankPicker = menu("Tanks")
+
 
 Class.germanTanks = menu("German Tanks")
 Class.americaTanks = menu("American Tanks")
@@ -671,7 +795,7 @@ Class.tankPicker.UPGRADES_TIER_0 = ["germanTanks", "americaTanks", "russianTanks
 
 Class.germanTanks.UPGRADES_TIER_0 = ["LTR"]
     Class.LTR.UPGRADES_TIER_5 = ["panzer2"]
-        Class.panzer2.UPGRADES_TIER_6 = ["pz38t"]
+        Class.panzer2.UPGRADES_TIER_6 = ["pz35t"]
 
 
 Class.americaTanks.UPGRADES_TIER_0 = ["T1"]
@@ -684,3 +808,15 @@ Class.russianTanks.UPGRADES_TIER_0 = ["MS1"]
 
 Class.frenchTanks.UPGRADES_TIER_0 = ["renaultft"]
     Class.renaultft.UPGRADES_TIER_5 = ["d1"]
+        Class.d1.UPGRADES_TIER_6 = ["d2"]
+
+
+
+
+
+Class.premiumTanks = menu("Premium Tanks")
+
+Class.germanPremiumTanks = menu("German Premium Tanks")
+Class.americaPremiumTanks = menu("American Premium Tanks")
+Class.russianPremiumTanks = menu("Russian Premium Tanks")
+Class.frenchPremiumTanks = menu("French Premium Tanks")
