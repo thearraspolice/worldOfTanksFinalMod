@@ -598,6 +598,67 @@ Class.renaultft = {
 
 
 
+Class.tankChassisD1 = {
+    PARENT: 'genericTank',
+    CONTROLLERS: ["turretWithMotion"],
+    SHAPE: 'd1chassis.png',
+    SIZE: 20,
+    GUNS: [
+        {
+            POSITION: [0.1, 0.1, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
+                TYPE: "bullet",
+            }
+        }
+    ]
+   
+
+}
+
+
+
+
+
+
+Class.d1 = {
+    PARENT: "genericWorldOfTanks",
+    DANGER: 6,
+	BODY: {
+        ACCELERATION: 3,
+        SPEED: 25,
+        HEALTH: 400,
+        
+        SHIELD: 0,
+        REGEN: 0,
+        FOV: 0.6,
+    },
+    LABEL: "D1",
+    SHAPE: 'd1turret.png',
+    SIZE: 70,
+    GUNS: [
+        
+        {
+            POSITION: [1, 1, 1, 5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 4, damage: 3.5, shudder: 0.5, speed: 2 }, g.power]),
+                TYPE: "developerBullet",
+                ALPHA: 0,
+            }
+        },
+        
+    ],
+    TURRETS: [
+        {
+            POSITION: [20,0, 0, 0, 360, 0],
+            TYPE: ["tankChassisD1"],
+        },
+    ]
+}
+
+
+
+
 
 Class.tankPicker = menu("Tanks")
 
@@ -622,3 +683,4 @@ Class.russianTanks.UPGRADES_TIER_0 = ["MS1"]
         Class.t26.UPGRADES_TIER_6 = ["bt2"]
 
 Class.frenchTanks.UPGRADES_TIER_0 = ["renaultft"]
+    Class.renaultft.UPGRADES_TIER_5 = ["d1"]
