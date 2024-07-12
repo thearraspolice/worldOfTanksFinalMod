@@ -635,7 +635,6 @@ Class.d1 = {
     },
     LABEL: "D1",
     SHAPE: 'd1turret.png',
-    CONTROLLERS: ["tankDestroyer"],
     SIZE: 70,
     GUNS: [
         

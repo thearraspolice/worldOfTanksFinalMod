@@ -943,101 +943,8 @@ class io_disableOnOverride extends IO {
 
 
 
-class io_tankDestroyerController extends IO {
-    constructor(b, opts = { static: false }) {
-        super(b);
-        if ("object" != typeof opts.player) throw new Error('Required IO Option "player" is not an object');
-        this.player = opts.player;
-        this.static = opts.static;
-        this.acceptsFromTop = false;
 
-        this.normalFacingType = null;
-        this.wasAutospinning = false;
-        this.isAutospinning = false;
-    }
-
-    // THE PLAYER MUST HAVE A VALID COMMAND AND TARGET OBJECT
-    think() {
-        let fire = this.player.command.autofire || this.player.command.lmb,
-            alt = this.player.command.autoalt || this.player.command.rmb,
-            target = {
-                x: this.player.target.x,
-                y: this.player.target.y,
-            };
-        if (this.body.reverseTargetWithTank) {
-            target.x *= this.body.reverseTank;
-            target.y *= this.body.reverseTank;
-        }
-        this.body.facingLocked = this.player.command.spinlock;
-        
-        // Autospin logic
-        this.isAutospinning = this.player.command.autospin;
-        if (this.isAutospinning && !this.wasAutospinning) {
-            // Save facing type for later
-            this.normalFacingType = [...this.body.facingType];
-            this.wasAutospinning = true;
-        } else if (!this.isAutospinning && this.wasAutospinning) {
-            // Restore facing type from earlier
-            this.body.facingType = [...this.normalFacingType];
-            this.wasAutospinning = false;
-        }
-        // Define autospin facingType
-        if (this.isAutospinning) {
-            let speed = 0.05 * (alt ? -1 : 1) * this.body.autospinBoost;
-            this.body.facingType = ["spin", {speed}];
-        }
-
-        this.body.autoOverride = this.player.command.override;
-        if (this.body.invuln && (fire || alt)) this.body.invuln = false;
-
-        // Custom tank destroyer movement
-        const speed = 1;  // Adjust the speed as needed
-        const rotationSpeed = 0.05;  // Adjust the rotation speed as needed
-        let rotationDelta = 0;
-        let movementDelta = { x: 0, y: 0 };
-
-        // Calculate rotation delta
-        if (this.player.command.left) {
-            rotationDelta -= rotationSpeed;
-        }
-        if (this.player.command.right) {
-            rotationDelta += rotationSpeed;
-        }
-
-        // Calculate movement delta
-        if (this.player.command.up) {
-            movementDelta.x += Math.cos(this.body.facing) * speed;
-            movementDelta.y += Math.sin(this.body.facing) * speed;
-        }
-        if (this.player.command.down) {
-            movementDelta.x -= Math.cos(this.body.facing) * speed;
-            movementDelta.y -= Math.sin(this.body.facing) * speed;
-        }
-
-        // Calculate new target position for movement
-        const goal = {
-            x: this.body.x + movementDelta.x,
-            y: this.body.y + movementDelta.y,
-        };
-
-        // Calculate new target facing for rotation
-        const newFacing = this.body.facing + rotationDelta;
-        const newTarget = {
-            x: this.body.x + Math.cos(newFacing),
-            y: this.body.y + Math.sin(newFacing),
-        };
-
-        return {
-            target: newTarget,
-            fire,
-            alt,
-            goal: this.static ? null : goal,
-            main: fire,
-        };
-    }
-}
-
-module.exports = io_listenToPlayer;
+//module.exports = io_listenToPlayer;
 
 
 
@@ -1080,7 +987,7 @@ let ioTypes = {
     hangOutNearMaster: io_hangOutNearMaster,
     fleeAtLowHealth: io_fleeAtLowHealth,
     wanderAroundMap: io_wanderAroundMap,
-    tankDestroyer: io_tankDestroyerController,
+   // tankDestroyer: io_tankDestroyerController,
 };
 
 module.exports = { ioTypes, IO };
