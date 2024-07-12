@@ -100,6 +100,7 @@ Class.genericTank = {
     MOTION_TYPE: "motor",
     FACING_TYPE: "toTarget",
     SIZE: 12,
+    
     MAX_CHILDREN: 0,
     DAMAGE_EFFECTS: false,
     IGNORED_BY_AI: false,
