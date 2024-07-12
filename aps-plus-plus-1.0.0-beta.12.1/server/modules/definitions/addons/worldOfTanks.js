@@ -757,7 +757,7 @@ Class.d2 = {
     },
     LABEL: "D2",
     SHAPE: 'd2turret.png',
-    TANK_DESTROYER: true,
+    
     SIZE: 70,
     GUNS: [
         
@@ -781,6 +781,40 @@ Class.d2 = {
 
 
 
+Class.marder2 = {
+    PARENT: "genericWorldOfTanks",
+    DANGER: 6,
+	BODY: {
+        ACCELERATION: 3,
+        SPEED: 15,
+        HEALTH: 450,
+        
+        SHIELD: 0,
+        REGEN: 0,
+        FOV: 0.6,
+    },
+    LABEL: "Marder II",
+    SHAPE: 'marder2.png',
+    TANK_DESTROYER: true,
+    SIZE: 70,
+    GUNS: [
+        
+        {
+            POSITION: [1, 1, 1, 5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 6.24, damage: 9, shudder: 0.5, speed: 2 }, g.power]),
+                TYPE: "developerBullet",
+                ALPHA: 0,
+            }
+        },
+        
+    ],
+    
+    ]
+}
+
+
+
 
 
 
@@ -797,6 +831,7 @@ Class.tankPicker.UPGRADES_TIER_0 = ["germanTanks", "americaTanks", "russianTanks
 Class.germanTanks.UPGRADES_TIER_0 = ["LTR"]
     Class.LTR.UPGRADES_TIER_5 = ["panzer2"]
         Class.panzer2.UPGRADES_TIER_6 = ["pz35t"]
+            Class.pz35t.UPGRADES_TIER_7 = ["marder2"]
 
 
 Class.americaTanks.UPGRADES_TIER_0 = ["T1"]
