@@ -940,6 +940,39 @@ class io_disableOnOverride extends IO {
         }
     }
 }
+class io_tankDestroyerController extends IO {
+    constructor(body) {
+        super(body);
+    }
+
+    think(input) {
+        // Define the speed and rotation factors
+        const speed = 0.05;
+        const rotationSpeed = 0.05;
+
+        // Get the control inputs
+        const controls = input;
+
+        // Rotate the tank with A and D
+        if (controls.left) {
+            this.body.facing -= rotationSpeed;
+        }
+        if (controls.right) {
+            this.body.facing += rotationSpeed;
+        }
+
+        // Move the tank forward and backward with W and S
+        if (controls.up) {
+            this.body.velocity.x += Math.cos(this.body.facing) * speed;
+            this.body.velocity.y += Math.sin(this.body.facing) * speed;
+        }
+        if (controls.down) {
+            this.body.velocity.x -= Math.cos(this.body.facing) * speed;
+            this.body.velocity.y -= Math.sin(this.body.facing) * speed;
+        }
+    }
+}
+
 
 let ioTypes = {
     //misc
@@ -974,6 +1007,7 @@ let ioTypes = {
     hangOutNearMaster: io_hangOutNearMaster,
     fleeAtLowHealth: io_fleeAtLowHealth,
     wanderAroundMap: io_wanderAroundMap,
+    tankDestroyer: io_tankDestroyerController,
 };
 
 module.exports = { ioTypes, IO };
