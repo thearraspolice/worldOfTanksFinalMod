@@ -150,6 +150,7 @@ class Canvas {
                     this.socket.talk('t', 5);
                     break;
                 case global.KEY_SPIN_LOCK:
+                    if (this.spinLocked) return;
                     this.spinLock = !this.spinLock;
                     this.socket.talk('t', 6);
                     break;

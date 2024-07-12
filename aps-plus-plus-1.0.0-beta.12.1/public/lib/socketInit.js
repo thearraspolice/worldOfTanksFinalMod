@@ -996,6 +996,10 @@ const socketInit = port => {
             case 'z': // name color
                 global.nameColor = m[0];
                 break;
+            case 'SL': // force spin lock
+                global.canvas.spinLock = !m[0];
+                global.canvas.spinLocked = !!m[0];
+                break;
             case 'CHAT_MESSAGE_ENTITY':
                 get.set(m);
                 global.chats = {};

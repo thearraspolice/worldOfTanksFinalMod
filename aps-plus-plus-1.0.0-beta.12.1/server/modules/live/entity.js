@@ -1142,6 +1142,11 @@ class Entity extends EventEmitter {
             this.addController(toAdd);
         }
 
+        if (this.isPlayer && this.socket) {
+        this.socket.talk("SL", set.SPIN_LOCK ?? false);
+        this.facingLocked = set.SPIN_LOCK ?? false;
+}
+
         if (set.TANK_DESTROYER != null) this.settings.tankDestroyer = set.TANK_DESTROYER;
         else this.settings.tankDestroyer = false;
         if (set.IGNORED_BY_AI != null) this.ignoredByAi = set.IGNORED_BY_AI;
