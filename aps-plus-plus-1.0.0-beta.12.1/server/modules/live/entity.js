@@ -1141,6 +1141,9 @@ class Entity extends EventEmitter {
             }
             this.addController(toAdd);
         }
+
+        if (set.TANK_DESTROYER != null) this.settings.tankDestroyer = set.TANK_DESTROYER;
+        else this.settings.tankDestroyer = false;
         if (set.IGNORED_BY_AI != null) this.ignoredByAi = set.IGNORED_BY_AI;
         if (set.MOTION_TYPE != null) this.motionType = set.MOTION_TYPE;
         if (typeof this.motionType == "string") this.motionType = [this.motionType, {}];

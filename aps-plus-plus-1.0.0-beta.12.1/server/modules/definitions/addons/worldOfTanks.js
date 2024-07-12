@@ -757,6 +757,7 @@ Class.d2 = {
     },
     LABEL: "D2",
     SHAPE: 'd2turret.png',
+    TANK_DESTROYER: true,
     SIZE: 70,
     GUNS: [
         
