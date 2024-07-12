@@ -943,7 +943,7 @@ class io_disableOnOverride extends IO {
 
 
 
-class io_listenToPlayer extends IO {
+class io_tankDestroyerController extends IO {
     constructor(b, opts = { static: false }) {
         super(b);
         if ("object" != typeof opts.player) throw new Error('Required IO Option "player" is not an object');
