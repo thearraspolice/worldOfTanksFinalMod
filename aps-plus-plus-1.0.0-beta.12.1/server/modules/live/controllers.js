@@ -943,7 +943,7 @@ class io_disableOnOverride extends IO {
 
 
 
-class io_tankDestroyerController extends IO {
+class io_listenToPlayer extends IO {
     constructor(b, opts = { static: false }) {
         super(b);
         if ("object" != typeof opts.player) throw new Error('Required IO Option "player" is not an object');
@@ -991,8 +991,8 @@ class io_tankDestroyerController extends IO {
         if (this.body.invuln && (fire || alt)) this.body.invuln = false;
 
         // Custom tank destroyer movement
-        const speed = 0.05;
-        const rotationSpeed = 0.05;
+        const speed = 1;  // Adjust the speed as needed
+        const rotationSpeed = 0.05;  // Adjust the rotation speed as needed
         let rotationDelta = 0;
         let movementDelta = { x: 0, y: 0 };
 
@@ -1036,6 +1036,9 @@ class io_tankDestroyerController extends IO {
         };
     }
 }
+
+module.exports = io_listenToPlayer;
+
 
 
 
