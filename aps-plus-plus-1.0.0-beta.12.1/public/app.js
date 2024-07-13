@@ -901,7 +901,7 @@ function drawHealth(x, y, instance, ratio, alpha) {
                 drawBar(x - size, x - size + 2 * size * shield, yy, barWidth, settings.graphical.coloredHealthbars ? gameDraw.mixColors(col, color.guiblack, 0.25) : color.teal);
                 ctx.globalAlpha = 1;
             }
-            if (settings.graphical.showHealthText) drawText(Math.round(instance.healthN) + "/" + Math.round(instance.maxHealthN), x, yy + barWidth * 2 + barWidth * settings.graphical.seperatedHealthbars * 2 + 10, 12 * ratio, color.guiwhite, "center");
+            //if (settings.graphical.showHealthText) drawText(Math.round(instance.healthN) + "/" + Math.round(instance.maxHealthN), x, yy + barWidth * 2 + barWidth * settings.graphical.seperatedHealthbars * 2 + 10, 12 * ratio, color.guiwhite, "center");
         }
     }
     if (instance.id !== gui.playerid && instance.nameplate) {
