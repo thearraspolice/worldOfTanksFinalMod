@@ -796,6 +796,7 @@ Class.marder2 = {
     LABEL: "Marder II",
     SHAPE: 'marder2.png',
     TANK_DESTROYER: true,
+    SPIN_LOCK: true,
     SIZE: 70,
     GUNS: [
         
