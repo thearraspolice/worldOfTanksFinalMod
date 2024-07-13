@@ -1684,8 +1684,6 @@ class Entity extends EventEmitter {
             realSize: this.realSize,
             status: 1,
             health: this.health.display(),
-            healthN: this.health.amount,
-            maxHealthN: this.health.max,
             shield: this.shield.display(),
             alpha: this.alpha,
             facing: this.facing,
