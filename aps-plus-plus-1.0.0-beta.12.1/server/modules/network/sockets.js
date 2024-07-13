@@ -997,14 +997,15 @@ function flatten(data) {
             /* 15 */ data.drawFill,
             /* 16 */ data.invuln,
             /* 17 */ Math.ceil(65535 * data.health),
-
-            /* 18 */ Math.round(65535 * data.shield),
-            /* 19 */ Math.round(255 * data.alpha),
+            /* 18 */ data.healthN,
+            /* 19 */ data.maxHealthN,
+            /* 20 */ Math.round(65535 * data.shield),
+            /* 21 */ Math.round(255 * data.alpha),
         );
         if (data.type & 0x04) {
             output.push(
-                /* 20 */ data.name,
-                /* 21 */ data.score
+                /* 22 */ data.name,
+                /* 23 */ data.score
             );
         }
     }
