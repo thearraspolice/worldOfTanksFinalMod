@@ -795,6 +795,7 @@ Class.marder2 = {
     },
     LABEL: "Marder II",
     SHAPE: 'marder2.png',
+    FACING_TYPE: "locksFacing",
     TANK_DESTROYER: true,
     SPIN_LOCK: true,
     SIZE: 70,
