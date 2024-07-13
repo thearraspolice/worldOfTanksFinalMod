@@ -46,18 +46,7 @@ server = require('http').createServer((req, res) => {
             resStr = JSON.stringify({ ip: c.host });
             break;
         default:
-            let fileToGet = path.join(publicRoot, req.url);
-
-            //if this file does not exist, return the default;
-            if (!fs.existsSync(fileToGet)) {
-                fileToGet = path.join(publicRoot, c.DEFAULT_FILE);
-            } else if (!fs.lstatSync(fileToGet).isFile()) {
-                fileToGet = path.join(publicRoot, c.DEFAULT_FILE);
-            }
-
-            //return the file
-            res.writeHead(200, { 'Content-Type': mimeSet[ fileToGet.split('.').pop() ] || 'text/html' });
-            return fs.createReadStream(fileToGet).pipe(res);
+            resStr = JSON.stringify({ gameMode: c.gameModeName, players: views.length });
     }
     res.writeHead(200);
     res.end(resStr);
