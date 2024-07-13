@@ -487,7 +487,7 @@ const process = (z = {}) => {
                 ss = z.shield;
             z.health = get.next() / 65535;
             z.shield = get.next() / 65535;
-            // Update stuff
+            // Update stuff//
             if (z.health < hh || z.shield < ss) {
                 z.render.status.set('injured');
             } else if (z.render.status.getFade() !== 1) {
