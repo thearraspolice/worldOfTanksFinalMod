@@ -979,28 +979,29 @@ function flatten(data) {
             /* 14 */ data.mirrorMasterAngle,
         );
     } else {
-        output.push(
-            /*  1 */ data.id,
-            /*  2 */ data.index,
-            /*  3 */ data.x,
-            /*  4 */ data.y,
-            /*  5 */ data.vx,
-            /*  6 */ data.vy,
-            /*  7 */ data.size,
-            /*  8 */ data.facing,
-            /*  9 */ Math.round(255 * data.perceptionAngleIndependence), //data.vfacing,
-            /* 10 */ data.defaultAngle,
-            /* 11 */ data.twiggle,
-            /* 12 */ data.layer,
-            /* 13 */ data.color,
-            /* 14 */ data.borderless,
-            /* 15 */ data.drawFill,
-            /* 16 */ data.invuln,
-            /* 17 */ Math.ceil(65535 * data.health),
-
-            /* 18 */ Math.round(65535 * data.shield),
-            /* 19 */ Math.round(255 * data.alpha),
-        );
+            output.push(
+      /*  1 */ data.id,
+      /*  2 */ data.index,
+      /*  3 */ data.x,
+      /*  4 */ data.y,
+      /*  5 */ data.vx,
+      /*  6 */ data.vy,
+      /*  7 */ data.size,
+      /*  8 */ data.facing,
+      /*  9 */ Math.round(255 * data.perceptionAngleIndependence), //data.vfacing,
+      /* 10 */ data.defaultAngle,
+      /* 11 */ data.twiggle,
+      /* 12 */ data.layer,
+      /* 13 */ data.color,
+      /* 14 */ data.borderless,
+      /* 15 */ data.drawFill,
+      /* 16 */ data.invuln,
+      /* 17 */ Math.ceil(65535 * data.health),
+      /* 18 */ data.healthN,
+      /* 19 */ data.maxHealthN,
+      /* 20 */ Math.round(65535 * data.shield),
+      /* 21 */ Math.round(255 * data.alpha),
+    );
         if (data.type & 0x04) {
             output.push(
                 /* 20 */ data.name,
