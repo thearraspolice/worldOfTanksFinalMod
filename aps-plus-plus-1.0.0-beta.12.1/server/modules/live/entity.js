@@ -194,6 +194,8 @@ class Gun extends EventEmitter {
         };
     }
     spawnBullets(useWhile, shootPermission) {
+
+    sockets.broadcastSound("shoot", this);
    
     
     // Find out some intermediate values
@@ -215,7 +217,7 @@ class Gun extends EventEmitter {
         // Shoot, multiple times in a tick if needed
         do {
             this.fire(offsetFinalX, offsetFinalY, skill);
-            sockets.broadcastSound("shoot", this);
+            
             this.cycle--;
             shootPermission =
                   this.countsOwnKids    ? this.countsOwnKids    > this.children.length
