@@ -1431,6 +1431,7 @@ const sockets = {
         let { x: x2, y: y2 } = socket.camera;
         let dist = Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
         if (dist >= volumeRange) continue;
+        console.log(dist, volumeRange, 1 - (dist / volumeRange));
         targetSockets.push([socket, 1 - (dist / volumeRange)]);
     }
     for (let [socket, volume] of targetSockets) {
