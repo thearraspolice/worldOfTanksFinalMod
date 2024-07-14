@@ -1429,6 +1429,7 @@ const sockets = {
     for (let socket of clients) {
         if (!socket.camera) continue;
         let { x: x2, y: y2 } = socket.camera;
+        console.log(x1, y1, x2, y2);
         let dist = Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
         if (dist >= volumeRange) continue;
         console.log(dist, volumeRange, 1 - (dist / volumeRange));
