@@ -194,7 +194,9 @@ class Gun extends EventEmitter {
         };
     }
     spawnBullets(useWhile, shootPermission) {
-        // Find out some intermediate values
+   
+    
+    // Find out some intermediate values
         let angle1 = this.direction + this.angle + this.body.facing,
             angle2 = this.angle + this.body.facing,
             gunlength = this.length - this.width * this.settings.size / 2,
@@ -213,6 +215,7 @@ class Gun extends EventEmitter {
         // Shoot, multiple times in a tick if needed
         do {
             this.fire(offsetFinalX, offsetFinalY, skill);
+            sockets.broadcastSound("shoot", this);
             this.cycle--;
             shootPermission =
                   this.countsOwnKids    ? this.countsOwnKids    > this.children.length
@@ -2138,7 +2141,7 @@ class Entity extends EventEmitter {
         if (this.isDead()) {
 
             this.emit('dead');
-            sockets.broadcastSound("death", this);
+            if (this.isPlayer) sockets.broadcastSound("death", this);
 
             //Shoot on death
             for (let i = 0; i < this.guns.length; i++) {
