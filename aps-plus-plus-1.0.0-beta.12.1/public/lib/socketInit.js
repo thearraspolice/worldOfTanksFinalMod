@@ -1007,6 +1007,7 @@ const socketInit = port => {
             case 'sound':
             let audio = new Audio(`/${m[0]}.mp3`);
             audio.volume = m[1];
+            console.log(m[1]);
             audio.play();
             break;
             case 'CHAT_MESSAGE_ENTITY':
