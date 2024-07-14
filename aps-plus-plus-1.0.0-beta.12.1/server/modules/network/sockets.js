@@ -1434,7 +1434,8 @@ const sockets = {
         targetSockets.push([socket, 1 - (dist / volumeRange)]);
     }
     for (let [socket, volume] of targetSockets) {
-        socket.talk("sound", sound, volume);
+    console.log(volume);    
+    socket.talk("sound", sound, volume);
     }
     },
     connect: (socket, req) => {
