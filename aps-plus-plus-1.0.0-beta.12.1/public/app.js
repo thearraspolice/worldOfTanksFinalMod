@@ -204,6 +204,10 @@ window.onload = async () => {
     window.addEventListener("resize", resizeEvent);
     resizeEvent();
 };
+// Preload the audio
+for (let audio of global.audio) {
+    fetch(`/${audio}.mp3`);
+}
 function resizeEvent() {
     let scale = window.devicePixelRatio;
     if (!settings.graphical.fancyAnimations) {

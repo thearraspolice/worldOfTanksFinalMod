@@ -820,6 +820,65 @@ Class.marder2 = {
 
 
 
+Class.tankChassispanzer3 = {
+    PARENT: 'genericTank',
+    CONTROLLERS: ["turretWithMotion"],
+    SHAPE: 'panzer3chassis.png',
+    SIZE: 20,
+    GUNS: [
+        {
+            POSITION: [0.1, 0.1, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
+                TYPE: "bullet",
+            }
+        }
+    ]
+   
+
+}
+
+
+
+
+
+
+Class.panzer3 = {
+    PARENT: "genericWorldOfTanks",
+    DANGER: 6,
+	BODY: {
+        ACCELERATION: 3,
+        SPEED: 40,
+        HEALTH: 510,
+        
+        SHIELD: 0,
+        REGEN: 0,
+        FOV: 0.6,
+    },
+    LABEL: "Pz. III",
+    SHAPE: 'panzer3turret.png',
+    SIZE: 70,
+    GUNS: [
+        
+        {
+            POSITION: [1, 1, 1, 5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 2.9, damage: 4, shudder: 0.5, speed: 2 }, g.power]),
+                TYPE: "developerBullet",
+                ALPHA: 0,
+            }
+        },
+        
+    ],
+    
+    
+}
+
+
+
+
+
+
 Class.tankPicker = menu("Tanks")
 
 
@@ -833,7 +892,7 @@ Class.tankPicker.UPGRADES_TIER_0 = ["germanTanks", "americaTanks", "russianTanks
 Class.germanTanks.UPGRADES_TIER_0 = ["LTR"]
     Class.LTR.UPGRADES_TIER_5 = ["panzer2"]
         Class.panzer2.UPGRADES_TIER_6 = ["pz35t"]
-            Class.pz35t.UPGRADES_TIER_7 = ["marder2"]
+            Class.pz35t.UPGRADES_TIER_7 = ["marder2", "panzer3"]
 
 
 Class.americaTanks.UPGRADES_TIER_0 = ["T1"]

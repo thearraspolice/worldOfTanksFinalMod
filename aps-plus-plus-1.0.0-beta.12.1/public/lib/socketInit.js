@@ -1004,6 +1004,11 @@ const socketInit = port => {
                 global.canvas.spinLock = !m[0];
                 global.canvas.spinLocked = !!m[0];
                 break;
+            case 'sound':
+            let audio = new Audio(`/${m[0]}.mp3`);
+            audio.volume = m[1];
+            audio.play();
+            break;
             case 'CHAT_MESSAGE_ENTITY':
                 get.set(m);
                 global.chats = {};

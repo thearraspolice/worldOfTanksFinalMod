@@ -1423,6 +1423,20 @@ const sockets = {
             clients[i].talk("r", room.width, room.height, JSON.stringify(room.setup.map(x => x.map(t => t.color.compiled))));
         }
     },
+    broadcastSound: (sound, loc, volumeRange = 1000) => {
+    let targetSockets = [];
+    let { x: x1, y: y1 } = loc;
+    for (let socket of clients) {
+        if (!socket.camera) continue;
+        let { x: x2, y: y2 } = socket.camera;
+        let dist = Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
+        if (dist >= volumeRange) continue;
+        targetSockets.push([socket, 1 - (dist / volumeRange)]);
+    }
+    for (let [socket, volume] of targetSockets) {
+        socket.talk("sound", sound, volume);
+    }
+    },
     connect: (socket, req) => {
         // This function initalizes the socket upon connection
         if (Date.now() - lastTime < 250) return socket.terminate();

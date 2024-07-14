@@ -2138,6 +2138,7 @@ class Entity extends EventEmitter {
         if (this.isDead()) {
 
             this.emit('dead');
+            sockets.broadcastSound("death", this);
 
             //Shoot on death
             for (let i = 0; i < this.guns.length; i++) {
