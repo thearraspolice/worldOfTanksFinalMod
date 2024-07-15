@@ -195,7 +195,12 @@ class Gun extends EventEmitter {
     }
     spawnBullets(useWhile, shootPermission) {
 
-    sockets.broadcastSound("shoot", this.body);
+
+    if(this.body.class == "marder2")
+    {
+        sockets.broadcastSound("shoot", this.body);
+    }
+    
    
     
     // Find out some intermediate values

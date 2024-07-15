@@ -870,6 +870,13 @@ Class.panzer3 = {
         },
         
     ],
+
+    TURRETS: [
+        {
+            POSITION: [20,0, 0, 0, 360, 0],
+            TYPE: ["tankChassispanzer3"],
+        },
+    ]
     
     
 }
