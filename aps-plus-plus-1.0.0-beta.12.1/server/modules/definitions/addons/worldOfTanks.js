@@ -35,17 +35,6 @@ Class.tankChassisLTR = {
     CONTROLLERS: ["turretWithMotion"],
     SHAPE: 'ltrchassis.png',
     SIZE: 20,
-    GUNS: [
-        {
-            POSITION: [0.1, 0.1, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
-                TYPE: "bullet",
-            }
-        }
-    ]
-   
-
 }
 
 
@@ -88,18 +77,7 @@ Class.tankChassisT1 = {
     PARENT: 'genericTank',
     CONTROLLERS: ["turretWithMotion"],
     SHAPE: 't1chassis.png',
-    SIZE: 20,
-    GUNS: [
-        {
-            POSITION: [0.1, 0.1, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
-                TYPE: "bullet",
-            }
-        }
-    ]
-   
-
+    SIZE: 20, 
 }
 
 Class.T1 = {
@@ -143,17 +121,6 @@ Class.tankChassisMS1 = {
     CONTROLLERS: ["turretWithMotion"],
     SHAPE: 'ms1chassis.png',
     SIZE: 20,
-    GUNS: [
-        {
-            POSITION: [0.1, 0.1, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
-                TYPE: "bullet",
-            }
-        }
-    ]
-   
-
 }
 
 
@@ -199,17 +166,6 @@ Class.tankChassisPzII = {
     CONTROLLERS: ["turretWithMotion"],
     SHAPE: 'panzer2chassis.png',
     SIZE: 20,
-    GUNS: [
-        {
-            POSITION: [0.1, 0.1, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
-                TYPE: "bullet",
-            }
-        }
-    ]
-   
-
 }
 
 
@@ -255,17 +211,6 @@ Class.tankChassisM2light = {
     CONTROLLERS: ["turretWithMotion"],
     SHAPE: 'm2lightchassis.png',
     SIZE: 20,
-    GUNS: [
-        {
-            POSITION: [0.1, 0.1, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
-                TYPE: "bullet",
-            }
-        }
-    ]
-   
-
 }
 
 
@@ -310,17 +255,6 @@ Class.tankChassisT26 = {
     CONTROLLERS: ["turretWithMotion"],
     SHAPE: 't26chassis.png',
     SIZE: 20,
-    GUNS: [
-        {
-            POSITION: [0.1, 0.1, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
-                TYPE: "bullet",
-            }
-        }
-    ]
-   
-
 }
 
 
@@ -367,17 +301,6 @@ Class.tankChassispz38t = {
     CONTROLLERS: ["turretWithMotion"],
     SHAPE: 'pz38tchassis.png',
     SIZE: 20,
-    GUNS: [
-        {
-            POSITION: [0.1, 0.1, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
-                TYPE: "bullet",
-            }
-        }
-    ]
-   
-
 }
 
 
@@ -426,17 +349,6 @@ Class.tankChassism3stuart = {
     CONTROLLERS: ["turretWithMotion"],
     SHAPE: 'm3stuartchassis.png',
     SIZE: 20,
-    GUNS: [
-        {
-            POSITION: [0.1, 0.1, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
-                TYPE: "bullet",
-            }
-        }
-    ]
-   
-
 }
 
 
@@ -483,17 +395,6 @@ Class.tankChassisbt2 = {
     CONTROLLERS: ["turretWithMotion"],
     SHAPE: 'bt2chassis.png',
     SIZE: 20,
-    GUNS: [
-        {
-            POSITION: [0.1, 0.1, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
-                TYPE: "bullet",
-            }
-        }
-    ]
-   
-
 }
 
 
@@ -543,17 +444,6 @@ Class.tankChassisRenaultft = {
     CONTROLLERS: ["turretWithMotion"],
     SHAPE: 'renaultftchassis.png',
     SIZE: 20,
-    GUNS: [
-        {
-            POSITION: [0.1, 0.1, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
-                TYPE: "bullet",
-            }
-        }
-    ]
-   
-
 }
 
 
@@ -603,17 +493,6 @@ Class.tankChassisD1 = {
     CONTROLLERS: ["turretWithMotion"],
     SHAPE: 'd1chassis.png',
     SIZE: 20,
-    GUNS: [
-        {
-            POSITION: [0.1, 0.1, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
-                TYPE: "bullet",
-            }
-        }
-    ]
-   
-
 }
 
 
@@ -662,17 +541,6 @@ Class.tankChassispz35t = {
     CONTROLLERS: ["turretWithMotion"],
     SHAPE: 'pz35tchassis.png',
     SIZE: 20,
-    GUNS: [
-        {
-            POSITION: [0.1, 0.1, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
-                TYPE: "bullet",
-            }
-        }
-    ]
-   
-
 }
 
 
@@ -727,17 +595,6 @@ Class.tankChassisd2 = {
     CONTROLLERS: ["turretWithMotion"],
     SHAPE: 'd2chassis.png',
     SIZE: 20,
-    GUNS: [
-        {
-            POSITION: [0.1, 0.1, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
-                TYPE: "bullet",
-            }
-        }
-    ]
-   
-
 }
 
 
@@ -825,17 +682,6 @@ Class.tankChassispanzer3 = {
     CONTROLLERS: ["turretWithMotion"],
     SHAPE: 'panzer3chassis.png',
     SIZE: 20,
-    GUNS: [
-        {
-            POSITION: [0.1, 0.1, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
-                TYPE: "bullet",
-            }
-        }
-    ]
-   
-
 }
 
 
