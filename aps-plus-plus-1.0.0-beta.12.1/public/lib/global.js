@@ -112,7 +112,7 @@ const global = {
     gameHeight: 0,
     xoffset: -0,
     yoffset: -0,
-    audio: ["death", "shoot"],
+    audio: ["death", "shoot", "shootSoundHeavy"],
     gameLoading: false,
     gameStart: false,
     disconnected: false,
