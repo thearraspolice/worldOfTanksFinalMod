@@ -197,7 +197,7 @@ class Gun extends EventEmitter {
 
 
    
-    sockets.broadcastSound("shoot", this.body);
+    sockets.broadcastSound(this.body.settings.shootSound ?? "shoot", this.body);
     
     
    
@@ -1158,6 +1158,7 @@ class Entity extends EventEmitter {
 
         if (set.TANK_DESTROYER != null) this.settings.tankDestroyer = set.TANK_DESTROYER;
         else this.settings.tankDestroyer = false;
+        if (set.SHOOT_SOUND) this.settings.shootSound = set.SHOOT_SOUND;
         if (set.IGNORED_BY_AI != null) this.ignoredByAi = set.IGNORED_BY_AI;
         if (set.MOTION_TYPE != null) this.motionType = set.MOTION_TYPE;
         if (typeof this.motionType == "string") this.motionType = [this.motionType, {}];

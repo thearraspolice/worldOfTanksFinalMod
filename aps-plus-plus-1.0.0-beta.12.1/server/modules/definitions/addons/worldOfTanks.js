@@ -53,6 +53,7 @@ Class.LTR = {
     LABEL: "L.T.R",
     SHAPE: 'ltrturret.png',
     SIZE: 70,
+    SHOOT_SOUND: "shoot",
     GUNS: [
         
         {
