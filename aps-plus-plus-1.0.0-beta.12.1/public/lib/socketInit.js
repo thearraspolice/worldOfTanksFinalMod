@@ -1005,7 +1005,7 @@ const socketInit = port => {
                 global.canvas.spinLocked = !!m[0];
                 break;
             case 'sound':
-            let audio = new Audio(`/${m[0]}.mp3`);
+            let audio = new Audio(`/${m[0]}`);
             audio.volume = m[1];
             console.log(m[1]);
             audio.play();

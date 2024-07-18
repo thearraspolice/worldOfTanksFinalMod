@@ -197,7 +197,7 @@ class Gun extends EventEmitter {
 
 
    
-    sockets.broadcastSound(this.body.settings.shootSound ?? "shoot", this.body);
+    sockets.broadcastSound(this.body.settings.shootSound ?? "shoot.mp3", this.body);
     
     
    
@@ -2148,7 +2148,7 @@ class Entity extends EventEmitter {
         if (this.isDead()) {
 
             this.emit('dead');
-            if (this.isPlayer) sockets.broadcastSound("death", this);
+            if (this.isPlayer) sockets.broadcastSound("death.mp3", this);
 
             //Shoot on death
             for (let i = 0; i < this.guns.length; i++) {
