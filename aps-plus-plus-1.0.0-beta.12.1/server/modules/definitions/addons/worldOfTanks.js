@@ -733,6 +733,115 @@ Class.panzer3 = {
 
 
 
+Class.tankChassist6medium = {
+    PARENT: 'genericTank',
+    CONTROLLERS: ["turretWithMotion"],
+    SHAPE: 't6mediumchassis.png',
+    SIZE: 20,
+}
+
+
+
+
+
+
+Class.t6medium = {
+    PARENT: "genericWorldOfTanks",
+    DANGER: 6,
+	BODY: {
+        ACCELERATION: 3,
+        SPEED: 32,
+        HEALTH: 600,
+        
+        SHIELD: 0,
+        REGEN: 0,
+        FOV: 0.6,
+    },
+    LABEL: "T6 Medium",
+    SHAPE: 't6mediumturret.png',
+    SIZE: 70,
+    GUNS: [
+        
+        {
+            POSITION: [1, 1, 1, 5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 4.92, damage: 6, shudder: 0.5, speed: 2 }, g.power]),
+                TYPE: "developerBullet",
+                ALPHA: 0,
+            }
+        },
+        
+    ],
+
+    TURRETS: [
+        {
+            POSITION: [20,0, 0, 0, 360, 0],
+            TYPE: ["tankChassist6medium"],
+        },
+    ]
+    
+    
+}
+
+
+
+
+Class.tankChassism5stuart = {
+    PARENT: 'genericTank',
+    CONTROLLERS: ["turretWithMotion"],
+    SHAPE: 'm5stuartchassis.png',
+    SIZE: 20,
+}
+
+
+
+
+
+
+Class.m5stuart = {
+    PARENT: "genericWorldOfTanks",
+    DANGER: 6,
+	BODY: {
+        ACCELERATION: 3,
+        SPEED: 40,
+        HEALTH: 495,
+        
+        SHIELD: 0,
+        REGEN: 0,
+        FOV: 0.6,
+    },
+    LABEL: "M5 Stuart",
+    SHAPE: 'm5stuartturret.png',
+    SIZE: 70,
+    GUNS: [
+        
+        {
+            POSITION: [1, 1, 1, 5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 1.8, damage: 2, shudder: 0.5, speed: 2 }, g.power]),
+                TYPE: "developerBullet",
+                ALPHA: 0,
+            }
+        },
+        
+    ],
+
+    TURRETS: [
+        {
+            POSITION: [20,0, 0, 0, 360, 0],
+            TYPE: ["tankChassism5stuart"],
+        },
+    ]
+    
+    
+}
+
+
+
+
+
+
+
 Class.tankPicker = menu("Tanks")
 
 
@@ -752,6 +861,7 @@ Class.germanTanks.UPGRADES_TIER_0 = ["LTR"]
 Class.americaTanks.UPGRADES_TIER_0 = ["T1"]
     Class.T1.UPGRADES_TIER_5 = ["m2light"]
             Class.m2light.UPGRADES_TIER_6 = ["m3stuart"]
+                Class.m3stuart.UPGRADES_TIER_7 = ["t6medium", "m5stuart"]
 
 Class.russianTanks.UPGRADES_TIER_0 = ["MS1"]
     Class.MS1.UPGRADES_TIER_5 = ["t26"]

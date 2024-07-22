@@ -3,13 +3,8 @@
     "",
     "\\aps-plus-plus-1.0.0-beta.12.1",
     "\\aps-plus-plus-1.0.0-beta.12.1\\public",
-    "\\aps-plus-plus-1.0.0-beta.12.1\\public\\lib",
-    "\\aps-plus-plus-1.0.0-beta.12.1\\server\\modules",
-    "\\aps-plus-plus-1.0.0-beta.12.1\\server\\modules\\definitions",
-    "\\aps-plus-plus-1.0.0-beta.12.1\\server\\modules\\definitions\\addons",
-    "\\aps-plus-plus-1.0.0-beta.12.1\\server\\modules\\definitions\\groups",
-    "\\aps-plus-plus-1.0.0-beta.12.1\\server\\modules\\live"
+    "\\aps-plus-plus-1.0.0-beta.12.1\\public\\lib\\json"
   ],
-  "SelectedNode": "\\aps-plus-plus-1.0.0-beta.12.1\\public\\lib\\socketInit.js",
+  "SelectedNode": "\\aps-plus-plus-1.0.0-beta.12.1\\public\\index.html",
   "PreviewInSolutionExplorer": false
 }
