@@ -874,11 +874,11 @@ Class.frenchTanks.UPGRADES_TIER_0 = ["renaultft"]
 
 
 
-
+/*
 Class.premiumTanks = menu("Premium Tanks")
 
 Class.germanPremiumTanks = menu("German Premium Tanks")
     Class.germanPremiumTanks.UPGRADES_TIER_0 = ["pz38t"]
 Class.americaPremiumTanks = menu("American Premium Tanks")
 Class.russianPremiumTanks = menu("Russian Premium Tanks")
-Class.frenchPremiumTanks = menu("French Premium Tanks")
+Class.frenchPremiumTanks = menu("French Premium Tanks")*/
