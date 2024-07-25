@@ -104,7 +104,7 @@ Class.genericTank = {
     MAX_CHILDREN: 0,
     DAMAGE_EFFECTS: false,
     IGNORED_BY_AI: false,
-    REROOT_UPGRADE_TREE: "basic",
+    //REROOT_UPGRADE_TREE: "basic",
     BODY: {
         ACCELERATION: base.ACCEL,
         SPEED: base.SPEED,
@@ -149,7 +149,7 @@ Class.genericWorldOfTanks = {
     MAX_CHILDREN: 0,
     DAMAGE_EFFECTS: false,
     IGNORED_BY_AI: false,
-    REROOT_UPGRADE_TREE: "basic",
+    REROOT_UPGRADE_TREE: "tanks",
     BODY: {
         ACCELERATION: base.ACCEL,
         SPEED: base.SPEED,
