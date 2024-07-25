@@ -1025,7 +1025,7 @@ Class.americaTanks.UPGRADES_TIER_0 = ["T1"]
 Class.russianTanks.UPGRADES_TIER_0 = ["MS1"]
     Class.MS1.UPGRADES_TIER_5 = ["t26"]
         Class.t26.UPGRADES_TIER_6 = ["bt2"]
-            Class.bt2.UPGRADES_TIER_7 = ["bt7, t28"]
+            Class.bt2.UPGRADES_TIER_7 = ["bt7", "t28"]
 
 Class.frenchTanks.UPGRADES_TIER_0 = ["renaultft"]
     Class.renaultft.UPGRADES_TIER_5 = ["d1"]
