@@ -840,9 +840,168 @@ Class.m5stuart = {
 
 
 
+Class.tankChassispz2g = {
+    PARENT: 'genericTank',
+    CONTROLLERS: ["turretWithMotion"],
+    SHAPE: 'pz2gchassis.png',
+    SIZE: 20,
+}
+
+
+
+
+
+
+Class.pz2g = {
+    PARENT: "genericWorldOfTanks",
+    DANGER: 6,
+	BODY: {
+        ACCELERATION: 3,
+        SPEED: 40,
+        HEALTH: 490,
+        
+        SHIELD: 0,
+        REGEN: 0,
+        FOV: 0.6,
+    },
+    LABEL: "Pz. II (G)",
+    SHAPE: 'pz2gturret.png',
+    SIZE: 70,
+    GUNS: [
+        
+        {
+            POSITION: [1, 1, 1, 5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.17, damage: 0.9, shudder: 0.5, speed: 2 }, g.power]),
+                TYPE: "developerBullet",
+                ALPHA: 0,
+            }
+        },
+        
+    ],
+
+    TURRETS: [
+        {
+            POSITION: [20,0, 0, 0, 360, 0],
+            TYPE: ["tankChassispz2g"],
+        },
+    ]
+    
+    
+}
+
+
+
+
+
+Class.tankChassisbt7 = {
+    PARENT: 'genericTank',
+    CONTROLLERS: ["turretWithMotion"],
+    SHAPE: 'bt7chassis.png',
+    SIZE: 20,
+}
+
+
+
+
+
+
+Class.bt7 = {
+    PARENT: "genericWorldOfTanks",
+    DANGER: 6,
+	BODY: {
+        ACCELERATION: 3,
+        SPEED: 50,
+        HEALTH: 510,
+        
+        SHIELD: 0,
+        REGEN: 0,
+        FOV: 0.6,
+    },
+    LABEL: "BT-7",
+    SHAPE: 'bt7turret.png',
+    SIZE: 70,
+    GUNS: [
+        
+        {
+            POSITION: [1, 1, 1, 5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 2.09, damage: 3.25, shudder: 0.5, speed: 2 }, g.power]),
+                TYPE: "developerBullet",
+                ALPHA: 0,
+            }
+        },
+        
+    ],
+    TURRETS: [
+        {
+            POSITION: [20,0, 0, 0, 360, 0],
+            TYPE: ["tankChassisbt7"],
+        },
+    ]
+}
+
+
+
+
+
+
+Class.tankChassist28 = {
+    PARENT: 'genericTank',
+    CONTROLLERS: ["turretWithMotion"],
+    SHAPE: 't28chassis.png',
+    SIZE: 20,
+}
+
+
+
+
+
+
+Class.t28 = {
+    PARENT: "genericWorldOfTanks",
+    DANGER: 6,
+	BODY: {
+        ACCELERATION: 3,
+        SPEED: 40,
+        HEALTH: 510,
+        
+        SHIELD: 0,
+        REGEN: 0,
+        FOV: 0.6,
+    },
+    LABEL: "T-28",
+    SHAPE: 't28turret.png',
+    SIZE: 70,
+    GUNS: [
+        
+        {
+            POSITION: [1, 1, 1, 5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 6.52, damage: 5.5, shudder: 0.5, speed: 2 }, g.power]),
+                TYPE: "developerBullet",
+                ALPHA: 0,
+            }
+        },
+        
+    ],
+    TURRETS: [
+        {
+            POSITION: [20,0, 0, 0, 360, 0],
+            TYPE: ["tankChassist28"],
+        },
+    ]
+}
+
+
+
+
+
+
 
 
 Class.tankPicker = menu("Tanks")
+Class.tankPicker.REROOT_UPGRADE_TREE: "tankPicker",
 
 
 Class.germanTanks = menu("German Tanks")
@@ -855,7 +1014,7 @@ Class.tankPicker.UPGRADES_TIER_0 = ["germanTanks", "americaTanks", "russianTanks
 Class.germanTanks.UPGRADES_TIER_0 = ["LTR"]
     Class.LTR.UPGRADES_TIER_5 = ["panzer2"]
         Class.panzer2.UPGRADES_TIER_6 = ["pz35t"]
-            Class.pz35t.UPGRADES_TIER_7 = ["marder2", "panzer3"]
+            Class.pz35t.UPGRADES_TIER_7 = ["pz2g", "panzer3"]
 
 
 Class.americaTanks.UPGRADES_TIER_0 = ["T1"]
@@ -866,6 +1025,7 @@ Class.americaTanks.UPGRADES_TIER_0 = ["T1"]
 Class.russianTanks.UPGRADES_TIER_0 = ["MS1"]
     Class.MS1.UPGRADES_TIER_5 = ["t26"]
         Class.t26.UPGRADES_TIER_6 = ["bt2"]
+            Class.bt2.UPGRADES_TIER_7 = ["bt7, t28"]
 
 Class.frenchTanks.UPGRADES_TIER_0 = ["renaultft"]
     Class.renaultft.UPGRADES_TIER_5 = ["d1"]
