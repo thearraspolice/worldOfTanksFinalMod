@@ -861,7 +861,7 @@ Class.germanTanks.UPGRADES_TIER_0 = ["LTR"]
 Class.americaTanks.UPGRADES_TIER_0 = ["T1"]
     Class.T1.UPGRADES_TIER_5 = ["m2light"]
             Class.m2light.UPGRADES_TIER_6 = ["m3stuart"]
-                //Class.m3stuart.UPGRADES_TIER_7 = ["t6medium", "m5stuart"]
+                Class.m3stuart.UPGRADES_TIER_7 = ["t6medium", "m5stuart"]
 
 Class.russianTanks.UPGRADES_TIER_0 = ["MS1"]
     Class.MS1.UPGRADES_TIER_5 = ["t26"]
