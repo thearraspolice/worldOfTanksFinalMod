@@ -1001,7 +1001,7 @@ Class.t28 = {
 
 
 Class.tankPicker = menu("Tanks")
-Class.tankPicker.REROOT_UPGRADE_TREE: "tankPicker",
+Class.tankPicker.REROOT_UPGRADE_TREE = "tankPicker",
 
 
 Class.germanTanks = menu("German Tanks")
