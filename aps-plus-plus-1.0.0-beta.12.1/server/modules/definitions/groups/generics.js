@@ -149,7 +149,7 @@ Class.genericWorldOfTanks = {
     MAX_CHILDREN: 0,
     DAMAGE_EFFECTS: false,
     IGNORED_BY_AI: false,
-    REROOT_UPGRADE_TREE: "tanks",
+    REROOT_UPGRADE_TREE: "tankPicker",
     BODY: {
         ACCELERATION: base.ACCEL,
         SPEED: base.SPEED,

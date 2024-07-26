@@ -963,7 +963,56 @@ Class.t28 = {
     DANGER: 6,
 	BODY: {
         ACCELERATION: 3,
-        SPEED: 40,
+        SPEED: 28,
+        HEALTH: 600,
+        
+        SHIELD: 0,
+        REGEN: 0,
+        FOV: 0.6,
+    },
+    LABEL: "T-28",
+    SHAPE: 't28turret.png',
+    SIZE: 100,
+    GUNS: [
+        
+        {
+            POSITION: [1, 1, 1, 5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 6.52, damage: 5.5, shudder: 0.5, speed: 2 }, g.power]),
+                TYPE: "developerBullet",
+                ALPHA: 0,
+            }
+        },
+        
+    ],
+    TURRETS: [
+        {
+            POSITION: [20,0, 0, 0, 360, 0],
+            TYPE: ["tankChassist28"],
+        },
+    ]
+}
+
+
+
+Class.tankChassisb1 = {
+    PARENT: 'genericTank',
+    CONTROLLERS: ["turretWithMotion"],
+    SHAPE: 't28chassis.png',
+    SIZE: 20,
+}
+
+
+
+
+
+
+Class.b1 = {
+    PARENT: "genericWorldOfTanks",
+    DANGER: 6,
+	BODY: {
+        ACCELERATION: 3,
+        SPEED: 28,
         HEALTH: 510,
         
         SHIELD: 0,
@@ -972,7 +1021,7 @@ Class.t28 = {
     },
     LABEL: "T-28",
     SHAPE: 't28turret.png',
-    SIZE: 70,
+    SIZE: 100,
     GUNS: [
         
         {
@@ -1000,6 +1049,7 @@ Class.t28 = {
 
 
 
+
 Class.tankPicker = menu("Tanks")
 Class.tankPicker.REROOT_UPGRADE_TREE = "tankPicker"
 
@@ -1013,7 +1063,7 @@ Class.tankPicker.UPGRADES_TIER_0 = ["germanTanks", "americaTanks", "russianTanks
 
 Class.germanTanks.UPGRADES_TIER_0 = ["LTR"]
     Class.LTR.UPGRADES_TIER_5 = ["panzer2"]
-        Class.panzer2.UPGRADES_TIER_6 = ["pz35t"]
+        Class.panzer2.UPGRADES_TIER_6 = ["pz35t"]//FIX THIS GERMANY IS ONE TIER BEHIND. REMOVE PZ35T AND ADD P4 AND LUCHS
             Class.pz35t.UPGRADES_TIER_7 = ["pz2g", "panzer3"]
 
 
@@ -1030,6 +1080,7 @@ Class.russianTanks.UPGRADES_TIER_0 = ["MS1"]
 Class.frenchTanks.UPGRADES_TIER_0 = ["renaultft"]
     Class.renaultft.UPGRADES_TIER_5 = ["d1"]
         Class.d1.UPGRADES_TIER_6 = ["d2"]
+            Class.d2.UPGRADES_TIER_7 = ["b1"]
 
 
 
