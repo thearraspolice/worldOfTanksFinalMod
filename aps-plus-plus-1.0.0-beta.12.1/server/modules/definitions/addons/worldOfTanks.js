@@ -872,7 +872,7 @@ Class.pz2g = {
         {
             POSITION: [1, 1, 1, 5, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.17, damage: 0.9, shudder: 0.5, speed: 2 }, g.power]),
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.7, damage: 0.9, shudder: 0.5, speed: 2 }, g.power]),
                 TYPE: "developerBullet",
                 ALPHA: 0,
             }
@@ -1150,6 +1150,59 @@ Class.pz4d = {
 
 
 
+Class.tankChassisluchs = {
+    PARENT: 'genericTank',
+    CONTROLLERS: ["turretWithMotion"],
+    SHAPE: 'luchschassis.png',
+    SIZE: 20,
+}
+
+
+
+
+
+
+Class.luchs = {
+    PARENT: "genericWorldOfTanks",
+    DANGER: 6,
+	BODY: {
+        ACCELERATION: 3,
+        SPEED: 44,
+        HEALTH: 600,
+        
+        SHIELD: 0,
+        REGEN: 0,
+        FOV: 0.6,
+    },
+    LABEL: "Luchs",
+    SHAPE: 'luchsturret.png',
+    SIZE: 70,
+    GUNS: [
+        
+        {
+            POSITION: [1, 1, 1, 5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 2, damage: 2.25, shudder: 0.5, speed: 2 }, g.power]),
+                TYPE: "developerBullet",
+                ALPHA: 0,
+            }
+        },
+        
+    ],
+
+    TURRETS: [
+        {
+            POSITION: [20,0, 0, 0, 360, 0],
+            TYPE: ["tankChassisluchs"],
+        },
+    ]
+    
+    
+}
+
+
+
+
 
 Class.tankPicker = menu("Tanks")
 Class.tankPicker.REROOT_UPGRADE_TREE = "tankPicker"
@@ -1164,8 +1217,9 @@ Class.tankPicker.UPGRADES_TIER_0 = ["germanTanks", "americaTanks", "russianTanks
 
 Class.germanTanks.UPGRADES_TIER_0 = ["LTR"]
     Class.LTR.UPGRADES_TIER_5 = ["panzer2"]
-        Class.panzer2.UPGRADES_TIER_6 = ["pz2g", "panzer3"]//FIX THIS GERMANY IS ONE TIER BEHIND. REMOVE PZ35T AND ADD P4 AND LUCHS
+        Class.panzer2.UPGRADES_TIER_6 = ["pz2g", "panzer3"]
             Class.panzer3.UPGRADES_TIER_7 = ["pz4d"]
+            Class.pz2g.UPGRADES_TIER_7 = ["luchs"]
 
 
 Class.americaTanks.UPGRADES_TIER_0 = ["T1"]
@@ -1190,7 +1244,10 @@ Class.frenchTanks.UPGRADES_TIER_0 = ["renaultft"]
 Class.premiumTanks = menu("Premium Tanks")
 
 Class.germanPremiumTanks = menu("German Premium Tanks")
-    Class.germanPremiumTanks.UPGRADES_TIER_0 = ["pz38t", "pz35t"]
 Class.americaPremiumTanks = menu("American Premium Tanks")
 Class.russianPremiumTanks = menu("Russian Premium Tanks")
 Class.frenchPremiumTanks = menu("French Premium Tanks")
+
+
+Class.premiumTanks.UPGRADES_TIER_0 = ["germanPremiumTanks", "americaPremiumTanks", "russianPremiumTanks", "frenchPremiumTanks"]
+    Class.germanPremiumTanks.UPGRADES_TIER_0 = ["pz38t", "pz35t"]

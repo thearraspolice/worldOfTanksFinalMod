@@ -69,7 +69,7 @@ module.exports = {
     // Physics
 
     // General multiplier for acceleration and max speeds.
-    runSpeed: 1.5,
+    runSpeed: 0.6,
 
     // General damage multiplier everytime damage is dealt.
     DAMAGE_CONSTANT: 0.5,
