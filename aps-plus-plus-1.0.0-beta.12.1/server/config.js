@@ -32,8 +32,8 @@ module.exports = {
     ROOM_SETUP: ['map_apspp_default'],
 
     // The dimensions of a single tile on the map.
-    TILE_WIDTH: 20,//400,
-    TILE_HEIGHT: 20,//400,
+    TILE_WIDTH: 60,//400,
+    TILE_HEIGHT: 60,//400,
 
 
 
@@ -148,7 +148,7 @@ module.exports = {
     ENEMY_SPAWN_COOLDOWN_NEST: 60, // Cooldown (in game ticks) of nest enemies spawn attempts being made.
 
     // Cooldown (in seconds) of boss spawns being announced.
-    BOSS_SPAWN_COOLDOWN: 60,
+    BOSS_SPAWN_COOLDOWN: 400000,
     // The delay (in seconds) between the boss spawns being announced and the bosses actually spawning.
     // NOTE: The spawn message (ex. "A strange trembling...") takes half as long to appear than the boss.
     BOSS_SPAWN_DURATION: 5,
