@@ -1165,7 +1165,7 @@ Class.tankPicker.UPGRADES_TIER_0 = ["germanTanks", "americaTanks", "russianTanks
 Class.germanTanks.UPGRADES_TIER_0 = ["LTR"]
     Class.LTR.UPGRADES_TIER_5 = ["panzer2"]
         Class.panzer2.UPGRADES_TIER_6 = ["pz2g", "panzer3"]//FIX THIS GERMANY IS ONE TIER BEHIND. REMOVE PZ35T AND ADD P4 AND LUCHS
-            Class.pz2g.panzer3.UPGRADES_TIER_7 = ["pz4d"]
+            Class.panzer3.UPGRADES_TIER_7 = ["pz4d"]
 
 
 Class.americaTanks.UPGRADES_TIER_0 = ["T1"]
