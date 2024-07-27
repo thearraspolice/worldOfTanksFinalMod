@@ -191,7 +191,7 @@ Class.panzer2 = {
         {
             POSITION: [1, 1, 1, 5, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, { reload: 2.58, damage: 0.6, shudder: 0.5, speed: 2 }, g.power]),
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 1.2, damage: 0.6, shudder: 0.5, speed: 2 }, g.power]),
                 TYPE: "developerBullet",
                 ALPHA: 0,
             }
