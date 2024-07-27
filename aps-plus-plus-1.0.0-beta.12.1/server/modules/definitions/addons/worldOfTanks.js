@@ -998,7 +998,7 @@ Class.t28 = {
 Class.tankChassisb1 = {
     PARENT: 'genericTank',
     CONTROLLERS: ["turretWithMotion"],
-    SHAPE: 't28chassis.png',
+    SHAPE: 'b1chassis.png',
     SIZE: 20,
 }
 
@@ -1019,8 +1019,8 @@ Class.b1 = {
         REGEN: 0,
         FOV: 0.6,
     },
-    LABEL: "T-28",
-    SHAPE: 't28turret.png',
+    LABEL: "B1",
+    SHAPE: 'b1turret.png',
     SIZE: 100,
     GUNS: [
         
@@ -1037,10 +1037,61 @@ Class.b1 = {
     TURRETS: [
         {
             POSITION: [20,0, 0, 0, 360, 0],
-            TYPE: ["tankChassist28"],
+            TYPE: ["tankChassisb1"],
         },
     ]
 }
+
+
+
+
+Class.tankChassisamx40 = {
+    PARENT: 'genericTank',
+    CONTROLLERS: ["turretWithMotion"],
+    SHAPE: 'amx40chassis.png',
+    SIZE: 20,
+}
+
+
+
+
+
+
+Class.amx40 = {
+    PARENT: "genericWorldOfTanks",
+    DANGER: 6,
+	BODY: {
+        ACCELERATION: 3,
+        SPEED: 30,
+        HEALTH: 600,
+        
+        SHIELD: 0,
+        REGEN: 0,
+        FOV: 0.6,
+    },
+    LABEL: "AMX-40",
+    SHAPE: 'amx40turret.png',
+    SIZE: 70,
+    GUNS: [
+        
+        {
+            POSITION: [1, 1, 1, 5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 5.06, damage: 7.5, shudder: 0.5, speed: 2 }, g.power]),
+                TYPE: "developerBullet",
+                ALPHA: 0,
+            }
+        },
+        
+    ],
+    TURRETS: [
+        {
+            POSITION: [20,0, 0, 0, 360, 0],
+            TYPE: ["tankChassisamx40"],
+        },
+    ]
+}
+
 
 
 
@@ -1080,7 +1131,7 @@ Class.russianTanks.UPGRADES_TIER_0 = ["MS1"]
 Class.frenchTanks.UPGRADES_TIER_0 = ["renaultft"]
     Class.renaultft.UPGRADES_TIER_5 = ["d1"]
         Class.d1.UPGRADES_TIER_6 = ["d2"]
-            Class.d2.UPGRADES_TIER_7 = ["b1"]
+            Class.d2.UPGRADES_TIER_7 = ["b1", "amx40"]
 
 
 
