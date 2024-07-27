@@ -1097,6 +1097,56 @@ Class.amx40 = {
 
 
 
+Class.tankChassispz4d = {
+    PARENT: 'genericTank',
+    CONTROLLERS: ["turretWithMotion"],
+    SHAPE: 'pz4dchassis.png',
+    SIZE: 20,
+}
+
+
+
+
+
+
+Class.pz4d = {
+    PARENT: "genericWorldOfTanks",
+    DANGER: 6,
+	BODY: {
+        ACCELERATION: 3,
+        SPEED: 36,
+        HEALTH: 610,
+        
+        SHIELD: 0,
+        REGEN: 0,
+        FOV: 0.6,
+    },
+    LABEL: "Pz. IV (D)",
+    SHAPE: 'pz4dturret.png',
+    SIZE: 90,
+    GUNS: [
+        
+        {
+            POSITION: [1, 1, 1, 5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 4.2, damage: 7, shudder: 0.5, speed: 2 }, g.power]),
+                TYPE: "developerBullet",
+                ALPHA: 0,
+            }
+        },
+        
+    ],
+    TURRETS: [
+        {
+            POSITION: [20,0, 0, 0, 360, 0],
+            TYPE: ["tankChassispz4d"],
+        },
+    ]
+}
+
+
+
+
 
 
 
@@ -1114,8 +1164,8 @@ Class.tankPicker.UPGRADES_TIER_0 = ["germanTanks", "americaTanks", "russianTanks
 
 Class.germanTanks.UPGRADES_TIER_0 = ["LTR"]
     Class.LTR.UPGRADES_TIER_5 = ["panzer2"]
-        Class.panzer2.UPGRADES_TIER_6 = ["pz35t"]//FIX THIS GERMANY IS ONE TIER BEHIND. REMOVE PZ35T AND ADD P4 AND LUCHS
-            Class.pz35t.UPGRADES_TIER_7 = ["pz2g", "panzer3"]
+        Class.panzer2.UPGRADES_TIER_6 = ["pz2g", "panzer3"]//FIX THIS GERMANY IS ONE TIER BEHIND. REMOVE PZ35T AND ADD P4 AND LUCHS
+            Class.pz2g.panzer3.UPGRADES_TIER_7 = ["pz4d"]
 
 
 Class.americaTanks.UPGRADES_TIER_0 = ["T1"]
@@ -1136,11 +1186,11 @@ Class.frenchTanks.UPGRADES_TIER_0 = ["renaultft"]
 
 
 
-/*
+
 Class.premiumTanks = menu("Premium Tanks")
 
 Class.germanPremiumTanks = menu("German Premium Tanks")
-    Class.germanPremiumTanks.UPGRADES_TIER_0 = ["pz38t"]
+    Class.germanPremiumTanks.UPGRADES_TIER_0 = ["pz38t", "pz35t"]
 Class.americaPremiumTanks = menu("American Premium Tanks")
 Class.russianPremiumTanks = menu("Russian Premium Tanks")
-Class.frenchPremiumTanks = menu("French Premium Tanks")*/
+Class.frenchPremiumTanks = menu("French Premium Tanks")
