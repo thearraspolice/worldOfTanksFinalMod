@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\aps-plus-plus-1.0.0-beta.12.1",
-    "\\aps-plus-plus-1.0.0-beta.12.1\\public"
+    "\\aps-plus-plus-1.0.0-beta.12.1\\server",
+    "\\aps-plus-plus-1.0.0-beta.12.1\\server\\modules",
+    "\\aps-plus-plus-1.0.0-beta.12.1\\server\\modules\\definitions",
+    "\\aps-plus-plus-1.0.0-beta.12.1\\server\\modules\\definitions\\groups"
   ],
-  "SelectedNode": "\\aps-plus-plus-1.0.0-beta.12.1\\public\\t26chassis.png",
+  "SelectedNode": "\\aps-plus-plus-1.0.0-beta.12.1\\server\\modules\\definitions\\gunvals.js",
   "PreviewInSolutionExplorer": false
 }
