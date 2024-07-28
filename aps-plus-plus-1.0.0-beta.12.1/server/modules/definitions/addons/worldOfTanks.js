@@ -59,7 +59,7 @@ Class.LTR = {
         {
             POSITION: [1, 1, 1, 5, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, { reload: 3.28, damage: 0.75, shudder: 0.5, speed: 2 }, g.power]),
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 3.28, damage: 1.75, shudder: 0.5, speed: 2 }, g.power]),
                 TYPE: "developerBullet",
                 ALPHA: 0,
             }
@@ -765,7 +765,7 @@ Class.t6medium = {
         {
             POSITION: [1, 1, 1, 5, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, { reload: 4.92, damage: 6, shudder: 0.5, speed: 2 }, g.power]),
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 4.5, damage: 6.3, shudder: 0.5, speed: 2 }, g.power]),
                 TYPE: "developerBullet",
                 ALPHA: 0,
             }
@@ -803,7 +803,7 @@ Class.m5stuart = {
     DANGER: 6,
 	BODY: {
         ACCELERATION: 3,
-        SPEED: 40,
+        SPEED: 36,
         HEALTH: 495,
         
         SHIELD: 0,
@@ -911,7 +911,7 @@ Class.bt7 = {
     DANGER: 6,
 	BODY: {
         ACCELERATION: 3,
-        SPEED: 50,
+        SPEED: 45,
         HEALTH: 510,
         
         SHIELD: 0,
@@ -926,7 +926,7 @@ Class.bt7 = {
         {
             POSITION: [1, 1, 1, 5, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, { reload: 2.09, damage: 3.25, shudder: 0.5, speed: 2 }, g.power]),
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 2.09, damage: 3, shudder: 0.5, speed: 2 }, g.power]),
                 TYPE: "developerBullet",
                 ALPHA: 0,
             }
@@ -978,7 +978,7 @@ Class.t28 = {
         {
             POSITION: [1, 1, 1, 5, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, { reload: 6.52, damage: 5.5, shudder: 0.5, speed: 2 }, g.power]),
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 5.52, damage: 6, shudder: 0.5, speed: 2 }, g.power]),
                 TYPE: "developerBullet",
                 ALPHA: 0,
             }
@@ -1077,7 +1077,7 @@ Class.amx40 = {
         {
             POSITION: [1, 1, 1, 5, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, { reload: 5.06, damage: 7.5, shudder: 0.5, speed: 2 }, g.power]),
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 5.06, damage: 6.9, shudder: 0.5, speed: 2 }, g.power]),
                 TYPE: "developerBullet",
                 ALPHA: 0,
             }
@@ -1115,7 +1115,7 @@ Class.pz4d = {
 	BODY: {
         ACCELERATION: 3,
         SPEED: 36,
-        HEALTH: 610,
+        HEALTH: 600,
         
         SHIELD: 0,
         REGEN: 0,
@@ -1129,7 +1129,7 @@ Class.pz4d = {
         {
             POSITION: [1, 1, 1, 5, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, { reload: 4.2, damage: 7, shudder: 0.5, speed: 2 }, g.power]),
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 4, damage: 7, shudder: 0.5, speed: 2 }, g.power]),
                 TYPE: "developerBullet",
                 ALPHA: 0,
             }
@@ -1167,8 +1167,8 @@ Class.luchs = {
     DANGER: 6,
 	BODY: {
         ACCELERATION: 3,
-        SPEED: 44,
-        HEALTH: 600,
+        SPEED: 36,
+        HEALTH: 580,
         
         SHIELD: 0,
         REGEN: 0,
@@ -1182,7 +1182,7 @@ Class.luchs = {
         {
             POSITION: [1, 1, 1, 5, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, { reload: 2, damage: 2.25, shudder: 0.5, speed: 2 }, g.power]),
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 2.4, damage: 2.25, shudder: 0.5, speed: 2 }, g.power]),
                 TYPE: "developerBullet",
                 ALPHA: 0,
             }
