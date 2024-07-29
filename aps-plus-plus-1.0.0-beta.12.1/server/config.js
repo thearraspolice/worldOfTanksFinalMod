@@ -32,8 +32,8 @@ module.exports = {
     ROOM_SETUP: ['map_apspp_default'],
 
     // The dimensions of a single tile on the map.
-    TILE_WIDTH: 250,//400,
-    TILE_HEIGHT: 250,//400,
+    TILE_WIDTH: 200,//400,
+    TILE_HEIGHT: 200,//400,
 
 
 
@@ -102,13 +102,13 @@ module.exports = {
     MAX_UPGRADE_TIER: 9,
 
     // Level difference between each tier.
-    TIER_MULTIPLIER: 12,
+    TIER_MULTIPLIER: 10,
 
     // Max normally achievable level.
     LEVEL_CAP: 45,
 
     // Max level you get by level-up key and auto-level-up.
-    LEVEL_CHEAT_CAP: 45,
+    LEVEL_CHEAT_CAP: 0,
 
     // Amount of player-bots to spawn.
     BOTS: 0,
