@@ -2,7 +2,8 @@ let permissionsDict = {},
     net = require('net'),
     clients = [],
     players = [],
-    disconnections = [];
+    disconnections = [],
+    usedIPs = [];
 
 for (let entry of require("../../permissions.js")) {
     permissionsDict[entry.key] = entry;
@@ -17,8 +18,8 @@ function close(socket) {
     if (socket.group) groups.removeMember(socket);
     let kill = false;
     if (usedIPs.indexOf(socket.ip) != -1) {
-      usedIPs.splice(usedIPs.indexOf(socket.ip), 1);
-      kill = true;
+        usedIPs.splice(usedIPs.indexOf(socket.ip), 1);
+        kill = true;
     }
     // Remove the player if one was created
     if (index != -1) {
@@ -31,7 +32,11 @@ function close(socket) {
                 player.body.invuln = false;
                 player.body.kill();
             } else {
-                if (!kill) {
+                if (kill) {
+                    if (player.body != null) {
+                        player.body.kill();
+                    }
+                } else {
                     let timeout = setTimeout(function () {
                         if (player.body != null) {
                             player.body.kill();
@@ -44,9 +49,8 @@ function close(socket) {
                         timeout: timeout,
                     };
                     disconnections.push(disconnection);
-                } else {
-                    player.body.kill();
                 }
+            }
         }
         // Disconnect everything
         util.log("[INFO] " + (player.body ? "User " + player.body.name : "A user without an entity") + " disconnected!");
@@ -65,8 +69,6 @@ function kick(socket, reason = "No reason given.") {
     util.warn(reason + " Kicking.");
     socket.lastWords("K");
 }
-
-let usedIPs = [];
 
 function chatLoop() {
     // clean up expired messages
@@ -427,17 +429,11 @@ function incoming(message, socket) {
                 return 1;
             }
             // cheatingbois
-
             if (player.body != null && socket.permissions && socket.permissions.class) {
-            
-            
-            if (usedIPs.indexOf(socket.ip) != -1) {
-              socket.talk("m", Config.MESSAGE_DISPLAY_TIME, "Token already in use");
-              return socket.kick("Testbed cheat");
-            }
-            usedIPs.push(socket.ip);
-
-                
+                if (usedIPs.indexOf(socket.ip) != -1) {
+                    socket.talk("m", Config.MESSAGE_DISPLAY_TIME, "Token already in use");
+                    return socket.kick("Testbed cheat");
+                } else usedIPs.push(socket.ip);
 
                 player.body.define({ RESET_UPGRADES: true, BATCH_UPGRADES: false });
                 player.body.define(socket.permissions.class);
