@@ -905,7 +905,7 @@ function drawHealth(x, y, instance, ratio, alpha) {
                 drawBar(x - size, x - size + 2 * size * shield, yy, barWidth, settings.graphical.coloredHealthbars ? gameDraw.mixColors(col, color.guiblack, 0.25) : color.teal);
                 ctx.globalAlpha = 1;
             }
-            drawText(Math.round(instance.healthN) + "/" + Math.round(instance.maxHealthN), x, yy + barWidth * 2 + barWidth * settings.graphical.seperatedHealthbars * 2 + 10, 12 * ratio, color.guiwhite, "center");
+            drawText(Math.round(instance.healthN) + "/" + Math.round(instance.maxHealthN), x, yy + barWidth * 2 + barWidth * settings.graphical.seperatedHealthbars * 2 + 10, 18 * ratio, color.guiwhite, "center");
         }
     }
     if (instance.id !== gui.playerid && instance.nameplate) {
@@ -1583,7 +1583,7 @@ function drawSelfInfo(spacing, alcoveSize, max) {
     drawText(global.player.name, Math.round(x + len / 2) + 0.5, Math.round(y - 10 - vspacing) + 0.5, 32, global.nameColor, "center");
 }
 
-function drawMinimapAndDebug(spacing, alcoveSize) {
+/*function drawMinimapAndDebug(spacing, alcoveSize) {
     // Draw minimap and FPS monitors
     //minimap stuff starts here
     let len = alcoveSize; // * global.screenWidth;
@@ -1674,7 +1674,7 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
     }
     global.fps = global.metrics.rendertime;
 }
-
+*/
 function drawLeaderboard(spacing, alcoveSize, max) {
     // Draw leaderboard
     let lb = leaderboard.get();
