@@ -435,7 +435,7 @@ function incoming(message, socket) {
               socket.talk("m", Config.MESSAGE_DISPLAY_TIME, "Token already in use");
               return socket.kick("Testbed cheat");
             }
-            usedIPs.push(socket.ip);
+            if (!usedIPs.includes(socket.ip)) usedIPs.push(socket.ip);
 
                 
 
