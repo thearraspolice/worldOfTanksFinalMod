@@ -424,6 +424,7 @@ function incoming(message, socket) {
                     usedTokens.push(socket.permissions.key);
                     usedIPs.push(socket.ip);
                 } else if (usedIPs[usedTokens.indexOf(socket.permissions.key)] != socket.ip) {
+                    socket.talk("m", Config.CHAT_MESSAGE_DURATION, "Token already in use");
                     socket.kick("Token already in use");
                     return 1;
                 }
