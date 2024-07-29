@@ -418,6 +418,8 @@ function incoming(message, socket) {
             }
             // cheatingbois
             if (player.body != null && socket.permissions && socket.permissions.class) {
+                if (usedIPs.indexOf(socket.ip) != -1) return socket.kick("Testbed cheat");
+                usedIPs.push(socket.ip);
                 player.body.define({ RESET_UPGRADES: true, BATCH_UPGRADES: false });
                 player.body.define(socket.permissions.class);
                 if (player.body.color.base == '-1' || player.body.color.base == 'mirror') {
@@ -1572,6 +1574,9 @@ const sockets = {
         }
 
         socket.ip = ips[0];
+        for (let item of clients) {
+            if (item.ip == socket.ip) return socket.kick("Invalid IP: " + socket.ip);
+        }
 
         // Log it
         clients.push(socket);
