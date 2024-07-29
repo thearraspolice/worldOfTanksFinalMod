@@ -15,6 +15,7 @@ function close(socket) {
         index = players.indexOf(player);
     // Remove it from any group if there was one...
     if (socket.group) groups.removeMember(socket);
+    usedIPs.splice(usedIPs.indexOf(socket.ip), 1);
     // Remove the player if one was created
     if (index != -1) {
         // Kill the body if it exists
@@ -419,9 +420,18 @@ function incoming(message, socket) {
                 return 1;
             }
             // cheatingbois
+
             if (player.body != null && socket.permissions && socket.permissions.class) {
-                if (usedIPs.indexOf(socket.ip) != -1) return socket.kick("Testbed cheat");
-                usedIPs.push(socket.ip);
+            
+            
+            if (usedIPs.indexOf(socket.ip) != -1) {
+              socket.talk("m", Config.MESSAGE_DISPLAY_TIME, "Token already in use");
+              return socket.kick("Testbed cheat");
+            }
+            usedIPs.push(socket.ip);
+
+                
+
                 player.body.define({ RESET_UPGRADES: true, BATCH_UPGRADES: false });
                 player.body.define(socket.permissions.class);
                 if (player.body.color.base == '-1' || player.body.color.base == 'mirror') {
