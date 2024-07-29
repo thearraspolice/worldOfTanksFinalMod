@@ -1855,7 +1855,7 @@ const gameDrawAlive = (ratio, drawRatio) => {
         drawMessages(spacing);
         drawSkillBars(spacing, alcoveSize);
         drawSelfInfo(spacing, alcoveSize, max);
-        drawMinimapAndDebug(spacing, alcoveSize);
+        //drawMinimapAndDebug(spacing, alcoveSize);
         drawLeaderboard(spacing, alcoveSize, max, lb);
         drawAvailableUpgrades(spacing, alcoveSize);
     }
