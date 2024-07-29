@@ -1,4 +1,4 @@
-clet { grassFloor: _, grassRockFloor: r, roadRight: d, roadLeft: a, roadTop: w, roadBottom: s, dirtPathSide: g, dirtPathVert: h, rockWallSide: j, rockWallVert: k, wall: q } = rejuire('../tiles/misc.js'),
+let { grassFloor: _, grassRockFloor: r, roadRight: d, roadLeft: a, roadTop: w, roadBottom: s, dirtPathSide: g, dirtPathVert: h, rockWallSide: j, rockWallVert: k, wall: q } = require('../tiles/misc.js'),
 
 
 room = [
