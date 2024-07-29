@@ -1,6 +1,6 @@
 module.exports = [
     {
-        "key": process.env.TOKEN_1,
+        "key": process.env.ArrasPolice_8975348956346752389074890327890,
         "discordID": "0",
         "nameColor": "#ffffff",
         "class": "premiumTanks",
