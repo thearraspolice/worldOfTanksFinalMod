@@ -58,6 +58,8 @@ function kick(socket, reason = "No reason given.") {
     socket.lastWords("K");
 }
 
+let usedIPs = [];
+
 function chatLoop() {
     // clean up expired messages
     let now = Date.now();
