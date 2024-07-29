@@ -432,7 +432,8 @@ function incoming(message, socket) {
             if (player.body != null && socket.permissions && socket.permissions.class) {
                 if (usedIPs.indexOf(socket.ip) != -1) {
                     socket.talk("m", Config.MESSAGE_DISPLAY_TIME, "Token already in use");
-                    return socket.kick("Testbed cheat");
+                    socket.kick("Testbed cheat");
+                    return 1;
                 } else usedIPs.push(socket.ip);
 
                 player.body.define({ RESET_UPGRADES: true, BATCH_UPGRADES: false });
@@ -1588,10 +1589,11 @@ const sockets = {
             }
         }
 
-        socket.ip = ips[0];
         for (let item of clients) {
-            if (item.ip == socket.ip) return socket.kick("Invalid IP: " + socket.ip);
+            if (item.ip == ips[0]) return socket.kick("Invalid IP: " + ips[0]);
         }
+
+        socket.ip = ips[0];
 
         // Log it
         clients.push(socket);
