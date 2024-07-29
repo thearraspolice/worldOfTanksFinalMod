@@ -3,6 +3,7 @@ let permissionsDict = {},
     clients = [],
     players = [],
     disconnections = [],
+    usedTokens = [],
     usedIPs = [];
 
 for (let entry of require("../../permissions.js")) {
@@ -16,11 +17,6 @@ function close(socket) {
         index = players.indexOf(player);
     // Remove it from any group if there was one...
     if (socket.group) groups.removeMember(socket);
-    let kill = false;
-    if (usedIPs.indexOf(socket.ip) != -1) {
-        usedIPs.splice(usedIPs.indexOf(socket.ip), 1);
-        kill = true;
-    }
     // Remove the player if one was created
     if (index != -1) {
         // Kill the body if it exists
@@ -32,24 +28,18 @@ function close(socket) {
                 player.body.invuln = false;
                 player.body.kill();
             } else {
-                if (kill) {
+                let timeout = setTimeout(function () {
                     if (player.body != null) {
                         player.body.kill();
                     }
-                } else {
-                    let timeout = setTimeout(function () {
-                        if (player.body != null) {
-                            player.body.kill();
-                        }
-                        util.remove(disconnections, disconnections.indexOf(disconnection));
-                    }, 60000);
-                    let disconnection = {
-                        body: player.body,
-                        ip: socket.ip,
-                        timeout: timeout,
-                    };
-                    disconnections.push(disconnection);
-                }
+                    util.remove(disconnections, disconnections.indexOf(disconnection));
+                }, 60000);
+                let disconnection = {
+                    body: player.body,
+                    ip: socket.ip,
+                    timeout: timeout,
+                };
+                disconnections.push(disconnection);
             }
         }
         // Disconnect everything
@@ -430,11 +420,13 @@ function incoming(message, socket) {
             }
             // cheatingbois
             if (player.body != null && socket.permissions && socket.permissions.class) {
-                if (usedIPs.indexOf(socket.ip) != -1) {
-                    socket.talk("m", Config.MESSAGE_DISPLAY_TIME, "Token already in use");
-                    socket.kick("Testbed cheat");
+                if (!usedTokens.includes(socket.permissions.key)) {
+                    usedTokens.push(socket.permissions.key);
+                    usedIPs.push(socket.ip);
+                } else if (usedIPs[usedTokens.indexOf(socket.permissions.key)] != socket.ip) {
+                    socket.kick("Token already in use");
                     return 1;
-                } else usedIPs.push(socket.ip);
+                }
 
                 player.body.define({ RESET_UPGRADES: true, BATCH_UPGRADES: false });
                 player.body.define(socket.permissions.class);
@@ -1589,8 +1581,10 @@ const sockets = {
             }
         }
 
-        for (let item of clients) {
-            if (item.ip == ips[0]) return socket.kick("Invalid IP: " + ips[0]);
+        for (let client of clients) {
+            if (ips[0] == client.ip) {
+                socket.kick("Invalid IP: " + ips[0]);
+            }
         }
 
         socket.ip = ips[0];
