@@ -15,7 +15,11 @@ function close(socket) {
         index = players.indexOf(player);
     // Remove it from any group if there was one...
     if (socket.group) groups.removeMember(socket);
-    usedIPs.splice(usedIPs.indexOf(socket.ip), 1);
+    let kill = false;
+    if (usedIPs.indexOf(socket.ip) != -1) {
+      usedIPs.splice(usedIPs.indexOf(socket.ip), 1);
+      kill = true;
+    }
     // Remove the player if one was created
     if (index != -1) {
         // Kill the body if it exists
@@ -27,19 +31,22 @@ function close(socket) {
                 player.body.invuln = false;
                 player.body.kill();
             } else {
-                let timeout = setTimeout(function () {
-                    if (player.body != null) {
-                        player.body.kill();
-                    }
-                    util.remove(disconnections, disconnections.indexOf(disconnection));
-                }, 60000);
-                let disconnection = {
-                    body: player.body,
-                    ip: socket.ip,
-                    timeout: timeout,
-                };
-                disconnections.push(disconnection);
-            }
+                if (!kill) {
+                    let timeout = setTimeout(function () {
+                        if (player.body != null) {
+                            player.body.kill();
+                        }
+                        util.remove(disconnections, disconnections.indexOf(disconnection));
+                    }, 60000);
+                    let disconnection = {
+                        body: player.body,
+                        ip: socket.ip,
+                        timeout: timeout,
+                    };
+                    disconnections.push(disconnection);
+                } else {
+                    player.body.kill();
+                }
         }
         // Disconnect everything
         util.log("[INFO] " + (player.body ? "User " + player.body.name : "A user without an entity") + " disconnected!");
