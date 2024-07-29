@@ -102,7 +102,7 @@ module.exports = {
     MAX_UPGRADE_TIER: 9,
 
     // Level difference between each tier.
-    TIER_MULTIPLIER: 10,
+    TIER_MULTIPLIER: 0,
 
     // Max normally achievable level.
     LEVEL_CAP: 45,
