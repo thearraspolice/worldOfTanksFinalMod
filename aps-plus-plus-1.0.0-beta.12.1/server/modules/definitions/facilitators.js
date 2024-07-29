@@ -531,10 +531,6 @@ exports.addAura = (damageFactor = 1, sizeFactor = 1, opacity = 0.3, auraColor) =
 exports.menu = (name = -1, color = -1, shape = 0) => {
     let gun = {
         POSITION: [18, 10, -1.4, 0, 0, 0, 0],
-        PROPERTIES: {
-            SHOOT_SETTINGS: exports.combineStats([g.basic]),
-            TYPE: "bullet",
-        },
     };
     return {
         PARENT: "genericTank",

@@ -1,6 +1,6 @@
 module.exports = {
 // Bases
-    basic: { reload: 10.5, recoil: 1.4, shudder: 0.1, damage: 0.05, speed: 4.5, spray: 15, health: 0.1, pen: 0.1, range: 0.4 },
+    basic: { reload: 10.5, recoil: 1.4, shudder: 0.1, damage: 0.05, speed: 4.5, spray: 15, health: 0.1, pen: 2, range: 0.4 },
     drone: { reload: 36, recoil: 0.25, shudder: 0.1, size: 0.6, speed: 2, spray: 0.1 },
     trap: { reload: 23, shudder: 0.25, size: 0.6, damage: 0.75, speed: 5, spray: 15, resist: 3 },
     swarm: { reload: 23, recoil: 0.25, shudder: 0.05, size: 0.4, damage: 0.75, speed: 4, spray: 5 },
@@ -99,7 +99,7 @@ module.exports = {
 // Misc
     blank: { reload: 1, recoil: 1, shudder: 1, size: 1, health: 1, damage: 1, pen: 1, speed: 1, maxSpeed: 1, range: 1, density: 1, spray: 1, resist: 1 },
     weak: { reload: 2, health: 0.6, damage: 0.6, pen: 0.8, speed: 0.5, maxSpeed: 0.7, range: 0.25, density: 0.3 },
-    power: { reload: 4, shudder: 0.6, size: 1.2, pen: 1.25, speed: 5, maxSpeed: 1.7, density: 2, spray: 0.5, resist: 1.5, range: 2 },
+    power: { reload: 4, shudder: 0.6, size: 1.2, pen: 1.25, speed: 5, maxSpeed: 1.7, density: 2, spray: 0.5, resist: 1.5, range: 3 },
     fake: { recoil: 0.00001, size: 0.00001, health: 0.0001, speed: 0, maxSpeed: 0, shudder: 0, spray: 0, recoil: 0, range: 0 },
     op: { reload: 0.5, recoil: 1.3, health: 4, damage: 4, pen: 4, speed: 3, maxSpeed: 2, density: 5, spray: 2 },
     arenaCloser: { reload: 1.25, recoil: 0.25, health: 1000, damage: 1000, pen: 1000, speed: 2.5, maxSpeed: 2.25, range: 1.4, density: 4, spray: 0.25 },

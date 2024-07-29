@@ -914,6 +914,11 @@ const spawn = (socket, name) => {
         body.invuln = true;
     }
     body.name = name;
+
+    switch (player.team) {
+    case TEAM_BLUE: body.nameColor = '#0000ff'; break;
+    case TEAM_GREEN: body.nameColor = '#ff0000'; break;
+}
     body.sendMessage = (content, displayTime = c.MESSAGE_DISPLAY_TIME) => socket.talk("m", displayTime, content);
 
     socket.rememberedTeam = player.team;
