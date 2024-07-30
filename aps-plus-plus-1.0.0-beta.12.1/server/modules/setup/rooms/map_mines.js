@@ -1,7 +1,8 @@
 let { grassFloor: _, grassRockFloor: r, roadRight: d, roadLeft: a, roadTop: w, roadBottom: s, dirtPathSide: g, dirtPathVert: h, rockWallSide: j, rockWallVert: k, wall: q } = require('../tiles/misc.js'),
 
 
-room = [ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
+room = [
+    [ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
 [ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
 [ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
 [ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
@@ -21,6 +22,7 @@ room = [ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    , 
 [ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
 [ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
 [ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ]
+];
 module.exports = room;
 
 /*let { grassFloor: _, grassRockFloor: r, roadRight: d, roadLeft: a, roadTop: w, roadBottom: s, dirtPathSide: g, dirtPathVert: h, rockWallSide: j, rockWallVert: k, wall: q } = require('../tiles/misc.js'),
