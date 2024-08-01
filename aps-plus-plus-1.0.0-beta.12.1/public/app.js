@@ -1184,6 +1184,34 @@ dirtPathVertImage.src = 'dirtPathVert.png';
 let dirtPathSideImage = new Image();
 dirtPathSideImage.src = 'dirtPathSide.png';
 
+
+
+let cornerRoadBottomLeft = new Image();
+cornerRoadBottomLeft.src = 'cornerRoadBottomLeft.png';
+
+let cornerRoadBottomRight = new Image();
+cornerRoadBottomRight.src = 'cornerRoadBottomRight.png';
+
+let cornerRoadTopLeft = new Image();
+cornerRoadTopLeft.src = 'cornerRoadTopLeft.png';
+
+let cornerRoadTopRight = new Image();
+cornerRoadTopRight.src = 'cornerRoadTopRight.png';
+
+
+
+let cornerRoadBL = new Image();
+cornerRoadBL.src = 'cornerRoadBL.png';
+
+let cornerRoadTL = new Image();
+cornerRoadTL.src = 'cornerRoadTL.png';
+
+let cornerRoadBR = new Image();
+cornerRoadBR.src = 'cornerRoadBR.png';
+
+let cornerRoadTR = new Image();
+cornerRoadTR.src = 'cornerRoadTR.png';
+
 function drawFloor(px, py, ratio) {
     // Clear the background + draw grid
     clearScreen(color.white, 1);
@@ -1234,6 +1262,30 @@ function drawFloor(px, py, ratio) {
             }
             else if (tile.startsWith('dirtPathVert')){
                 ctx.drawImage(dirtPathVertImage, left, top, right - left, bottom - top);
+            }
+            else if (tile.startsWith('cornerRoadTopLeft')){
+                ctx.drawImage(cornerRoadTopLeft, left, top, right - left, bottom - top);
+            }
+            else if (tile.startsWith('cornerRoadTopRight')){
+                ctx.drawImage(cornerRoadTopRight, left, top, right - left, bottom - top);
+            }
+            else if (tile.startsWith('cornerRoadBottomRight')){
+                ctx.drawImage(cornerRoadBottomRight, left, top, right - left, bottom - top);
+            }
+            else if (tile.startsWith('cornerRoadBottomLeft')){
+                ctx.drawImage(cornerRoadBottomLeft, left, top, right - left, bottom - top);
+            }
+            else if (tile.startsWith('cornerRoadTL')){
+                ctx.drawImage(cornerRoadTL, left, top, right - left, bottom - top);
+            }
+            else if (tile.startsWith('cornerRoadBL')){
+                ctx.drawImage(cornerRoadBL, left, top, right - left, bottom - top);
+            }
+            else if (tile.startsWith('cornerRoadTR')){
+                ctx.drawImage(cornerRoadTR, left, top, right - left, bottom - top);
+            }
+            else if (tile.startsWith('cornerRoadBR')){
+                ctx.drawImage(cornerRoadBR, left, top, right - left, bottom - top);
             }
             
             else {

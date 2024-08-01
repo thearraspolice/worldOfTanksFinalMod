@@ -1,29 +1,7 @@
-let { grassFloor: _, grassRockFloor: r, roadRight: d, roadLeft: a, roadTop: w, roadBottom: s, dirtPathSide: g, dirtPathVert: h, rockWallSide: j, rockWallVert: k, wall: q } = require('../tiles/misc.js'),
+let { grassFloor: _, grassRockFloor: r, roadRight: d, roadLeft: a, roadTop: w, roadBottom: s, dirtPathSide: g, dirtPathVert: h, rockWallSide: j, rockWallVert: k, cornerRoadTopLeft: q, cornerRoadBottomLeft: e, cornerRoadTopRight: t, cornerRoadBottomRight: y, cornerRoadTL: u, cornerRoadTR: i, cornerRoadBL: o, cornerRoadBR: p } = require('../tiles/misc.js'),
 
 
-room = [
-    [ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ],
-[ _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ,  _    ]
-];
-module.exports = room;
+room = [ [ _ , _ , _ , _ , _ , _ , _ , _ , _ , d , a , _ , _ , _ , _ , _ , _ , _ , _ , _ ], [ _ , _ , _ , j , j , _ , _ , _ , _ , d , a , _ , _ , _ , _ , j , j , _ , _ , _ ], [ _ , _ , _ , j , _ , _ , _ , _ , _ , d , a , _ , _ , _ , _ , _ , j , _ , _ , _ ], [ _ , j , j , j , _ , _ , _ , j , j , d , a , j , j , _ , _ , _ , j , j , j , _ ], [ _ , j , _ , _ , _ , _ , j , j , j , d , a , j , j , j , _ , _ , _ , _ , j , _ ], [ _ , _ , _ , _ , _ , j , j , _ , _ , d , a , _ , _ , j , j , _ , _ , _ , _ , _ ], [ _ , _ , _ , _ , j , j , _ , _ , _ , d , a , _ , _ , _ , j , j , _ , _ , _ , _ ], [ _ , _ , _ , j , j , _ , _ , _ , j , d , a , j , _ , _ , _ , j , j , _ , _ , _ ], [ _ , _ , _ , j , j , _ , _ , j , j , d , a , j , j , _ , _ , j , j , _ , _ , _ ], [ w , w , w , w , w , w , w , w , w , y , e , w , w , w , w , w , w , w , w , w ], [ s , s , s , s , s , s , s , s , s , t , q , s , s , s , s , s , s , s , s , s ], [ _ , _ , _ , j , j , _ , _ , j , j , d , a , j , j , _ , _ , j , j , _ , _ , _ ], [ _ , _ , _ , j , j , _ , _ , _ , j , d , a , j , _ , _ , _ , j , j , _ , _ , _ ], [ _ , _ , _ , _ , j , j , _ , _ , _ , d , a , _ , _ , _ , j , j , _ , _ , _ , _ ], [ _ , _ , _ , _ , _ , j , j , _ , _ , d , a , _ , _ , j , j , _ , _ , _ , _ , _ ], [ _ , j , _ , _ , _ , _ , j , j , j , d , a , j , j , j , _ , _ , _ , _ , j , _ ], [ _ , j , j , j , _ , _ , _ , j , j , d , a , j , j , _ , _ , _ , j , j , j , _ ], [ _ , _ , _ , j , _ , _ , _ , _ , _ , d , a , _ , _ , _ , _ , _ , j , _ , _ , _ ], [ _ , _ , _ , j , j , _ , _ , _ , _ , d , a , _ , _ , _ , _ , j , j , _ , _ , _ ], [ _ , _ , _ , _ , _ , _ , _ , _ , _ , d , a , _ , _ , _ , _ , _ , _ , _ , _ , _ ] ];
 
 /*let { grassFloor: _, grassRockFloor: r, roadRight: d, roadLeft: a, roadTop: w, roadBottom: s, dirtPathSide: g, dirtPathVert: h, rockWallSide: j, rockWallVert: k, wall: q } = require('../tiles/misc.js'),
 	
@@ -66,3 +44,5 @@ room = [
     [  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  d ,  a ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ,  _ ],
 ];
 module.exports = room;*/
+
+module.exports = room;
