@@ -173,6 +173,12 @@ cornerRoadBR = new Tile({
     
 });
 
+darkStone = new Tile({
+    color: "darkStone",
+    init: tile => room.spawnableDefault.push(tile),
+    
+});
+
 cornerRoadBL = new Tile({
     color: "cornerRoadBL",
     init: tile => room.spawnableDefault.push(tile),
@@ -226,4 +232,4 @@ rockWallVert = new Tile({
 }),
 
 
-module.exports = { normal, nest, wall, nestNoBoss, grassFloor, grassRockFloor, roadLeft, roadRight, roadTop, roadBottom, dirtPathSide, dirtPathVert, rockWallSide, rockWallVert, cornerRoadTopLeft, cornerRoadBottomLeft, cornerRoadTopRight, cornerRoadBottomRight, cornerRoadBL, cornerRoadBR, cornerRoadTL, cornerRoadTR };
+module.exports = { normal, nest, wall, nestNoBoss, grassFloor, grassRockFloor, roadLeft, roadRight, roadTop, roadBottom, dirtPathSide, dirtPathVert, rockWallSide, rockWallVert, cornerRoadTopLeft, cornerRoadBottomLeft, cornerRoadTopRight, cornerRoadBottomRight, cornerRoadBL, cornerRoadBR, cornerRoadTL, cornerRoadTR, darkStone };

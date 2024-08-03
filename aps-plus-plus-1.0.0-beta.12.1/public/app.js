@@ -1212,6 +1212,12 @@ cornerRoadBR.src = 'cornerRoadBR.png';
 let cornerRoadTR = new Image();
 cornerRoadTR.src = 'cornerRoadTR.png';
 
+
+
+
+let darkStone = new Image();
+darkStone.src = 'darkStone.jpg';
+
 function drawFloor(px, py, ratio) {
     // Clear the background + draw grid
     clearScreen(color.white, 1);
@@ -1286,6 +1292,9 @@ function drawFloor(px, py, ratio) {
             }
             else if (tile.startsWith('cornerRoadBR')){
                 ctx.drawImage(cornerRoadBR, left, top, right - left, bottom - top);
+            }
+            else if (tile.startsWith('darkStone')){
+                ctx.drawImage(darkStone, left, top, right - left, bottom - top);
             }
             
             else {
