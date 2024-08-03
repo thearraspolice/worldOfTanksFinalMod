@@ -2,6 +2,8 @@ const { dereference, combineStats, makeDeco, menu } = require('../facilitators.j
 const { base, gunCalcNames, statnames } = require('../constants.js');
 const g = require('../gunvals.js');
 
+Config.SPAWN_CLASS = "tankPicker"
+
 module.exports = ({ Events }) => {
     Events.on('spawn', entity => {
         entity.on('define', () => {

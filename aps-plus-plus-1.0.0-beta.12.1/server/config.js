@@ -129,7 +129,7 @@ module.exports = {
     BOT_NAME_PREFIX: "[AI] ",
 
     // The class that players and player-bots spawn as.
-    SPAWN_CLASS: "tankPicker",
+    SPAWN_CLASS: "basic",
 
 
 
