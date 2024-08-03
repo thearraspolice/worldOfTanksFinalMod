@@ -4,5 +4,5 @@ let teams = 2;
 module.exports = {
     MODE: "tdm",
     TEAMS: teams,
-    ROOM_SETUP: ['map_horror'],
+    ROOM_SETUP: ['map_mines'],
 };
